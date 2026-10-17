@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ProjectLightHouse"
-run/main_scene="uid://cmk825dt2h4jx"
+run/main_scene="uid://skrbi54os8gi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

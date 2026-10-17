@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://skrbi54os8gi"]
+
+[ext_resource type="Script" uid="uid://cme8nympt1bwr" path="res://scripts/UI/MainMenu.gd" id="1_58fj5"]
+[ext_resource type="Texture2D" uid="uid://cuf2fa4iopxsx" path="res://Farol sala.jpg.jpeg" id="2_3h7gc"]
+
+[node name="MainMenu" type="Node2D" unique_id=130539172]
+script = ExtResource("1_58fj5")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=2008995381]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1392769865]
+texture = ExtResource("2_3h7gc")
+
+[node name="Label" type="Label" parent="." unique_id=1754460255]
+offset_left = -76.0
+offset_top = -103.0
+offset_right = 80.0
+offset_bottom = -80.0
+text = "LightHouseAnomaly"
+
+[node name="Start" type="Button" parent="." unique_id=1552564114]
+offset_left = -120.0
+offset_top = 35.0
+offset_right = -64.0
+offset_bottom = 66.0
+text = "START"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
