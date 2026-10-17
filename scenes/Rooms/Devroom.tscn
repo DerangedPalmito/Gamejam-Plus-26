@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cmk825dt2h4jx"]
+
+[ext_resource type="Script" uid="uid://dalvswmuxbnf1" path="res://scripts/Bedroom/Bedroom.gd" id="1_q3yaa"]
+[ext_resource type="Script" uid="uid://dmy54fhkivcmg" path="res://scripts/testearea.gd" id="2_6a4om"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yij0u"]
+size = Vector2(169, 150)
+
+[node name="Devroom" type="Node2D" unique_id=1740814942]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1690645699]
+
+[node name="Superior" type="ColorRect" parent="." unique_id=1261727525]
+offset_left = -951.0
+offset_top = -1679.0
+offset_right = 969.0
+offset_bottom = -599.0
+color = Color(0.5803922, 0.8627451, 0.8862745, 1)
+
+[node name="Label" type="Label" parent="Superior" unique_id=238534873]
+layout_mode = 0
+offset_left = 840.0
+offset_top = 502.0
+offset_right = 1149.0
+offset_bottom = 590.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "SUPERIOR"
+
+[node name="LightRoomN" type="ColorRect" parent="." unique_id=516260751]
+offset_left = -962.0
+offset_top = -2808.0
+offset_right = 958.0
+offset_bottom = -1728.0
+color = Color(0.8589378, 0.93648654, 2.3102762e-06, 1)
+
+[node name="FarolNorte" type="Label" parent="LightRoomN" unique_id=1651971581]
+layout_mode = 0
+offset_left = 740.0
+offset_top = 426.0
+offset_right = 1172.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "FAROL NORTE"
+
+[node name="LightRoomS" type="ColorRect" parent="." unique_id=693329192]
+offset_left = 3018.0
+offset_top = -2787.0
+offset_right = 4938.0
+offset_bottom = -1707.0
+color = Color(0.5134967, 0.56228936, 1.347661e-06, 1)
+
+[node name="FarolSul" type="Label" parent="LightRoomS" unique_id=1708156768]
+layout_mode = 0
+offset_left = 822.0
+offset_top = 486.0
+offset_right = 1158.0
+offset_bottom = 574.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "FAROL SUL"
+
+[node name="LightRoomL" type="ColorRect" parent="." unique_id=1100608183]
+offset_left = 1030.0
+offset_top = -2796.0
+offset_right = 2950.0
+offset_bottom = -1716.0
+color = Color(1, 0.8209088, 0.8920444, 1)
+
+[node name="FarolLeste" type="Label" parent="LightRoomL" unique_id=2050409422]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 495.0
+offset_right = 1140.0
+offset_bottom = 583.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "FAROL LESTE"
+
+[node name="LightRoomO" type="ColorRect" parent="." unique_id=232921804]
+offset_left = -2922.0
+offset_top = -2803.0
+offset_right = -1002.0
+offset_bottom = -1723.0
+color = Color(0.49594545, 0.5590279, 0.4825552, 1)
+
+[node name="FaroloOeste" type="Label" parent="LightRoomO" unique_id=773114534]
+layout_mode = 0
+offset_left = 734.0
+offset_top = 467.0
+offset_right = 1166.0
+offset_bottom = 555.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "FAROL OESTE"
+
+[node name="Bedroomm" type="ColorRect" parent="." unique_id=40102465]
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0.22167921, 0.9999997, 0.94792086, 1)
+
+[node name="Label" type="Label" parent="Bedroomm" unique_id=325168597]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 497.0
+offset_right = 1092.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "QUARTO"
+
+[node name="Bedroom" type="PanelContainer" parent="." unique_id=806156399]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3yaa")
+
+[node name="ItemTestePInteracao" type="Area2D" parent="Bedroom" unique_id=1610895023]
+position = Vector2(-588, -492)
+script = ExtResource("2_6a4om")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bedroom/ItemTestePInteracao" unique_id=249748297]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bedroom/ItemTestePInteracao" unique_id=1040952070]
+position = Vector2(588, 631)
+shape = SubResource("RectangleShape2D_yij0u")
