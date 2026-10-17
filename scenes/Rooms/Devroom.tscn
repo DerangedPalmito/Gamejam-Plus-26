@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dalvswmuxbnf1" path="res://scripts/Rooms/Bedroom.gd" id="1_6a4om"]
 [ext_resource type="Script" uid="uid://brpm07hhawmrj" path="res://scripts/Rooms/ExteriorWest.gd" id="1_8yy2x"]
 [ext_resource type="Script" uid="uid://oshpex3ugxm4" path="res://scripts/Rooms/LightRoomNorth.gd" id="1_bxvx3"]
+[ext_resource type="Script" uid="uid://c6sltjlyx4plr" path="res://scripts/Rooms/Devroom.gd" id="1_dyj72"]
 [ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
 [ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
 [ext_resource type="Script" uid="uid://dmy54fhkivcmg" path="res://scripts/testearea.gd" id="2_6a4om"]
@@ -12,6 +13,7 @@
 size = Vector2(71.5, 60)
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
+script = ExtResource("1_dyj72")
 
 [node name="GameCamera" type="Camera2D" parent="." unique_id=1690645699]
 
