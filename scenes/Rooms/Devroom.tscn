@@ -7,10 +7,12 @@
 [ext_resource type="Script" uid="uid://c6sltjlyx4plr" path="res://scripts/Rooms/Devroom.gd" id="1_dyj72"]
 [ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
 [ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
-[ext_resource type="Script" uid="uid://dmy54fhkivcmg" path="res://scripts/testearea.gd" id="2_6a4om"]
+[ext_resource type="Texture2D" uid="uid://dryg6jesk2p8m" path="res://assets/sprites/Rooms/LanternRoom/LanternRoom.png" id="7_dyj72"]
+[ext_resource type="Script" uid="uid://dklcalsk41kh5" path="res://scripts/Tasks/CleaningWindow/CleaningWindowTask.gd" id="8_myhuw"]
+[ext_resource type="Texture2D" uid="uid://co2qj3a0haj0e" path="res://icon.svg" id="9_xgmbl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yij0u"]
-size = Vector2(71.5, 60)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
+size = Vector2(227, 170)
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 script = ExtResource("1_dyj72")
@@ -183,21 +185,9 @@ position = Vector2(0, -438)
 position = Vector2(0, -3)
 script = ExtResource("1_h8onv")
 
-[node name="LanternRoom" type="ColorRect" parent="Rooms/LanternRoom" unique_id=1081875736]
-offset_left = -192.0
-offset_top = -325.0
-offset_right = 192.0
-offset_bottom = -109.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
-
-[node name="Label" type="Label" parent="Rooms/LanternRoom/LanternRoom" unique_id=826544270]
-layout_mode = 0
-offset_left = 161.0
-offset_top = 99.0
-offset_right = 267.0
-offset_bottom = 122.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "LanternRoom"
+[node name="BackGround" type="Sprite2D" parent="Rooms/LanternRoom" unique_id=1048365011]
+position = Vector2(0, -217)
+texture = ExtResource("7_dyj72")
 
 [node name="ExteriorN" type="Button" parent="Rooms/LanternRoom" unique_id=1866732864]
 offset_left = -44.0
@@ -215,8 +205,86 @@ offset_bottom = -112.0
 theme_override_font_sizes/font_size = 10
 text = "BEDROOM"
 
+[node name="CleaningWindowTask1" type="Button" parent="Rooms/LanternRoom" unique_id=469844105]
+offset_left = -191.0
+offset_top = -313.0
+offset_right = -163.0
+offset_bottom = -188.0
+
+[node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("8_myhuw")
+
+[node name="Fundo" type="ColorRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=270126255]
+z_index = 1
+layout_mode = 0
+offset_left = -79.0
+offset_top = -312.0
+offset_right = 79.0
+offset_bottom = -122.0
+color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+
+[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=1591093508]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo/Area2D" unique_id=909738095]
+z_index = 2
+position = Vector2(79.5, 83)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=2126683004]
+z_index = 1
+layout_mode = 0
+offset_left = -65.0
+offset_top = -292.0
+offset_right = 63.0
+offset_bottom = -164.0
+texture = ExtResource("9_xgmbl")
+
+[node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=1316149943]
+z_index = 1
+layout_mode = 0
+offset_left = -39.0
+offset_top = -161.0
+offset_right = 46.0
+offset_bottom = -134.0
+rounded = true
+show_percentage = false
+
 [node name="LanternRoomAnchor" type="Marker2D" parent="Rooms/LanternRoom" unique_id=326896093]
 position = Vector2(0, -216)
+
+[node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Fundo" type="ColorRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=974194799]
+z_index = 1
+layout_mode = 0
+offset_left = -79.0
+offset_top = -312.0
+offset_right = 79.0
+offset_bottom = -122.0
+color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+
+[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo" unique_id=864776816]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo/Area2D" unique_id=478835406]
+z_index = 2
+position = Vector2(79.5, 83)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="CleaningGlassTask1" type="Button" parent="Rooms/LanternRoom" unique_id=1370081779]
+offset_left = -44.0
+offset_top = -282.0
+offset_right = 31.0
+offset_bottom = -214.0
 
 [node name="Bedroom" type="Node2D" parent="Rooms" unique_id=1237759687]
 script = ExtResource("1_6a4om")
@@ -245,26 +313,17 @@ offset_bottom = -82.0
 theme_override_font_sizes/font_size = 10
 text = "LANTERN ROOM"
 
-[node name="ItemTestePInteracao" type="Area2D" parent="Rooms/Bedroom" unique_id=1610895023]
-position = Vector2(-583, -493)
-script = ExtResource("2_6a4om")
-
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/Bedroom/ItemTestePInteracao" unique_id=249748297]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Bedroom/ItemTestePInteracao" unique_id=1040952070]
-position = Vector2(492, 555)
-shape = SubResource("RectangleShape2D_yij0u")
-
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
+visible = false
 
 [node name="ScreenFade" type="ColorRect" parent="UI" unique_id=2107084289]
-visible = false
 offset_left = -995.0
 offset_top = -546.0
 offset_right = 1005.0
 offset_bottom = 554.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
@@ -278,4 +337,5 @@ color = Color(0, 0, 0, 1)
 [connection signal="pressed" from="Rooms/ExteriorNorth/ExteriorEast" to="Rooms/ExteriorWest" method="_on_exterior_east_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/ExteriorN" to="Rooms/LanternRoom" method="_on_exterior_n_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/Bedroom" to="Rooms/LanternRoom" method="_on_bedroom_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/CleaningWindowTask1" to="Rooms/LanternRoom" method="_on_cleaning_window_task_1_pressed"]
 [connection signal="pressed" from="Rooms/Bedroom/LanternRoom" to="Rooms/Bedroom" method="_on_button_pressed"]
