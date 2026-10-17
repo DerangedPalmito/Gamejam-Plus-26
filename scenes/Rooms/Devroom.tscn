@@ -1,149 +1,246 @@
 [gd_scene format=3 uid="uid://cmk825dt2h4jx"]
 
+[ext_resource type="Script" uid="uid://dt1nv7w21ku5x" path="res://scripts/Rooms/ExteriorEast.gd" id="1_1d8qm"]
 [ext_resource type="Script" uid="uid://dalvswmuxbnf1" path="res://scripts/Rooms/Bedroom.gd" id="1_6a4om"]
+[ext_resource type="Script" uid="uid://brpm07hhawmrj" path="res://scripts/Rooms/ExteriorWest.gd" id="1_8yy2x"]
+[ext_resource type="Script" uid="uid://oshpex3ugxm4" path="res://scripts/Rooms/LightRoomNorth.gd" id="1_bxvx3"]
+[ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
 [ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
 [ext_resource type="Script" uid="uid://dmy54fhkivcmg" path="res://scripts/testearea.gd" id="2_6a4om"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yij0u"]
-size = Vector2(169, 150)
+size = Vector2(71.5, 60)
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1690645699]
+[node name="GameCamera" type="Camera2D" parent="." unique_id=1690645699]
 
 [node name="Rooms" type="Node2D" parent="." unique_id=902412338]
 
-[node name="LightRoomN" type="ColorRect" parent="Rooms" unique_id=516260751]
-offset_left = -962.0
-offset_top = -2808.0
-offset_right = 958.0
-offset_bottom = -1728.0
-color = Color(0.8589378, 0.93648654, 2.3102762e-06, 1)
+[node name="ExteriorSouth" type="Node2D" parent="Rooms" unique_id=827130631]
+script = ExtResource("1_fwl31")
 
-[node name="FarolNorte" type="Label" parent="Rooms/LightRoomN" unique_id=1651971581]
-layout_mode = 0
-offset_left = 740.0
-offset_top = 426.0
-offset_right = 1172.0
-offset_bottom = 514.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "FAROL NORTE"
-
-[node name="LightRoomS" type="ColorRect" parent="Rooms" unique_id=693329192]
-offset_left = 3018.0
-offset_top = -2787.0
-offset_right = 4938.0
-offset_bottom = -1707.0
-color = Color(0.5134967, 0.56228936, 1.347661e-06, 1)
-
-[node name="FarolSul" type="Label" parent="Rooms/LightRoomS" unique_id=1708156768]
-layout_mode = 0
-offset_left = 822.0
-offset_top = 486.0
-offset_right = 1158.0
-offset_bottom = 574.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "FAROL SUL"
-
-[node name="LightRoomL" type="ColorRect" parent="Rooms" unique_id=1100608183]
-offset_left = 990.0
-offset_top = -2801.0
-offset_right = 2910.0
-offset_bottom = -1721.0
-color = Color(1, 0.8209088, 0.8920444, 1)
-
-[node name="FarolLeste" type="Label" parent="Rooms/LightRoomL" unique_id=2050409422]
-layout_mode = 0
-offset_left = 708.0
-offset_top = 495.0
-offset_right = 1140.0
-offset_bottom = 583.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "FAROL LESTE"
-
-[node name="LightRoomO" type="ColorRect" parent="Rooms" unique_id=232921804]
-offset_left = -2922.0
-offset_top = -2803.0
-offset_right = -1002.0
-offset_bottom = -1723.0
+[node name="ExteriorSouth" type="ColorRect" parent="Rooms/ExteriorSouth" unique_id=100018090]
+offset_left = 586.0
+offset_top = -548.0
+offset_right = 970.0
+offset_bottom = -332.0
 color = Color(0.49594545, 0.5590279, 0.4825552, 1)
 
-[node name="FaroloOeste" type="Label" parent="Rooms/LightRoomO" unique_id=773114534]
+[node name="Label" type="Label" parent="Rooms/ExteriorSouth/ExteriorSouth" unique_id=1684670139]
 layout_mode = 0
-offset_left = 734.0
-offset_top = 467.0
-offset_right = 1166.0
-offset_bottom = 555.0
+offset_left = 165.0
+offset_top = 96.0
+offset_right = 273.0
+offset_bottom = 119.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "FAROL OESTE"
+text = "ExteriorSouth"
+
+[node name="ExteriorEast" type="Button" parent="Rooms/ExteriorSouth" unique_id=1474137575]
+offset_left = 594.0
+offset_top = -450.0
+offset_right = 669.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorEast"
+
+[node name="ExteriorWest" type="Button" parent="Rooms/ExteriorSouth" unique_id=403502011]
+offset_left = 890.0
+offset_top = -450.0
+offset_right = 965.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorWest"
+
+[node name="ExteriorSouthAnchor" type="Marker2D" parent="Rooms/ExteriorSouth" unique_id=570855835]
+position = Vector2(780, -438)
+
+[node name="ExteriorEast" type="Node2D" parent="Rooms" unique_id=367207462]
+script = ExtResource("1_1d8qm")
+
+[node name="ExteriorEast" type="ColorRect" parent="Rooms/ExteriorEast" unique_id=1539131259]
+offset_left = 198.0
+offset_top = -548.0
+offset_right = 582.0
+offset_bottom = -332.0
+color = Color(0.49594545, 0.5590279, 0.4825552, 1)
+
+[node name="Label" type="Label" parent="Rooms/ExteriorEast/ExteriorEast" unique_id=416583659]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 96.0
+offset_right = 273.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ExteriorEast"
+
+[node name="ExteriorEastAnchor" type="Marker2D" parent="Rooms/ExteriorEast" unique_id=1944816457]
+position = Vector2(390, -438)
+
+[node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorEast" unique_id=135766936]
+offset_left = 205.0
+offset_top = -450.0
+offset_right = 280.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorNorth"
+
+[node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorEast" unique_id=2124744728]
+offset_left = 500.0
+offset_top = -451.0
+offset_right = 575.0
+offset_bottom = -429.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorSouth"
+
+[node name="ExteriorWest" type="Node2D" parent="Rooms" unique_id=1085817032]
+script = ExtResource("1_8yy2x")
+
+[node name="ExteriorWest" type="ColorRect" parent="Rooms/ExteriorWest" unique_id=1715667841]
+offset_left = -581.0
+offset_top = -548.0
+offset_right = -197.0
+offset_bottom = -332.0
+color = Color(0.49594545, 0.5590279, 0.4825552, 1)
+
+[node name="Label" type="Label" parent="Rooms/ExteriorWest/ExteriorWest" unique_id=1061273643]
+layout_mode = 0
+offset_left = 165.0
+offset_top = 96.0
+offset_right = 273.0
+offset_bottom = 119.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ExteriorWest"
+
+[node name="ExteriorWestAnchor" type="Marker2D" parent="Rooms/ExteriorWest" unique_id=1193087812]
+position = Vector2(-388, -438)
+
+[node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorWest" unique_id=1002195992]
+offset_left = -275.0
+offset_top = -449.0
+offset_right = -200.0
+offset_bottom = -427.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorNorth"
+
+[node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorWest" unique_id=1657131374]
+offset_left = -577.0
+offset_top = -451.0
+offset_right = -499.0
+offset_bottom = -429.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior South"
+
+[node name="ExteriorNorth" type="Node2D" parent="Rooms" unique_id=703684846]
+script = ExtResource("1_bxvx3")
+
+[node name="ExteriorNorth" type="ColorRect" parent="Rooms/ExteriorNorth" unique_id=1277196114]
+offset_left = -192.0
+offset_top = -548.0
+offset_right = 192.0
+offset_bottom = -332.0
+color = Color(0.49594545, 0.5590279, 0.4825552, 1)
+
+[node name="Label" type="Label" parent="Rooms/ExteriorNorth/ExteriorNorth" unique_id=1877119111]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 98.0
+offset_right = 269.0
+offset_bottom = 121.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "ExteriorNorth"
+
+[node name="LanternRoom" type="Button" parent="Rooms/ExteriorNorth" unique_id=14454335]
+offset_left = -37.0
+offset_top = -360.0
+offset_right = 40.0
+offset_bottom = -338.0
+theme_override_font_sizes/font_size = 10
+text = "Lantern Room"
+
+[node name="ExteriorWest" type="Button" parent="Rooms/ExteriorNorth" unique_id=1111112957]
+offset_left = -161.0
+offset_top = -449.0
+offset_right = -88.0
+offset_bottom = -427.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior West"
+
+[node name="ExteriorEast" type="Button" parent="Rooms/ExteriorNorth" unique_id=1713139337]
+offset_left = 119.0
+offset_top = -450.0
+offset_right = 189.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior East"
+
+[node name="ExteriorNorthAnchor" type="Marker2D" parent="Rooms/ExteriorNorth" unique_id=1570048440]
+position = Vector2(0, -438)
 
 [node name="LanternRoom" type="Node2D" parent="Rooms" unique_id=1498737095]
 position = Vector2(0, -3)
 script = ExtResource("1_h8onv")
 
-[node name="LanternRoom2" type="ColorRect" parent="Rooms/LanternRoom" unique_id=1261727525]
-offset_left = -951.0
-offset_top = -1676.0
-offset_right = 969.0
-offset_bottom = -596.0
-color = Color(0.5803922, 0.8627451, 0.8862745, 1)
+[node name="LanternRoom" type="ColorRect" parent="Rooms/LanternRoom" unique_id=1081875736]
+offset_left = -192.0
+offset_top = -325.0
+offset_right = 192.0
+offset_bottom = -109.0
+color = Color(0.49594545, 0.5590279, 0.4825552, 1)
 
-[node name="Label" type="Label" parent="Rooms/LanternRoom/LanternRoom2" unique_id=238534873]
+[node name="Label" type="Label" parent="Rooms/LanternRoom/LanternRoom" unique_id=826544270]
 layout_mode = 0
-offset_left = 702.0
-offset_top = 489.0
-offset_right = 1209.0
-offset_bottom = 577.0
+offset_left = 161.0
+offset_top = 99.0
+offset_right = 267.0
+offset_bottom = 122.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "LANTERN ROOM"
+text = "LanternRoom"
 
 [node name="ExteriorN" type="Button" parent="Rooms/LanternRoom" unique_id=1866732864]
-offset_left = -266.0
-offset_top = -1650.0
-offset_right = 283.0
-offset_bottom = -1554.0
-theme_override_font_sizes/font_size = 64
+offset_left = -44.0
+offset_top = -322.0
+offset_right = 49.0
+offset_bottom = -300.0
+theme_override_font_sizes/font_size = 10
 text = "EXTERIOR NORTH"
 
 [node name="Bedroom" type="Button" parent="Rooms/LanternRoom" unique_id=1411027242]
-offset_left = -178.0
-offset_top = -720.0
-offset_right = 155.0
-offset_bottom = -624.0
-theme_override_font_sizes/font_size = 64
+offset_left = -30.0
+offset_top = -134.0
+offset_right = 29.0
+offset_bottom = -112.0
+theme_override_font_sizes/font_size = 10
 text = "BEDROOM"
+
+[node name="LanternRoomAnchor" type="Marker2D" parent="Rooms/LanternRoom" unique_id=326896093]
+position = Vector2(0, -216)
 
 [node name="Bedroom" type="Node2D" parent="Rooms" unique_id=1237759687]
 script = ExtResource("1_6a4om")
 
 [node name="Bedroom" type="ColorRect" parent="Rooms/Bedroom" unique_id=90638975]
-offset_left = -960.0
-offset_top = -540.0
-offset_right = 960.0
-offset_bottom = 540.0
+offset_left = -192.0
+offset_top = -108.0
+offset_right = 192.0
+offset_bottom = 108.0
 color = Color(0.49594545, 0.5590279, 0.4825552, 1)
 
-[node name="Label" type="Label" parent="Rooms/Bedroom/Bedroom" unique_id=325168597]
+[node name="Label" type="Label" parent="Rooms/Bedroom/Bedroom" unique_id=1814223750]
 layout_mode = 0
-offset_left = 819.0
-offset_top = 511.0
-offset_right = 1087.0
-offset_bottom = 599.0
+offset_left = 161.0
+offset_top = 99.0
+offset_right = 267.0
+offset_bottom = 122.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
 text = "Bedroom"
 
 [node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
-offset_left = -264.0
-offset_top = -517.0
-offset_right = 251.0
-offset_bottom = -421.0
-theme_override_font_sizes/font_size = 64
+offset_left = -43.0
+offset_top = -104.0
+offset_right = 45.0
+offset_bottom = -82.0
+theme_override_font_sizes/font_size = 10
 text = "LANTERN ROOM"
 
 [node name="ItemTestePInteracao" type="Area2D" parent="Rooms/Bedroom" unique_id=1610895023]
@@ -153,10 +250,10 @@ script = ExtResource("2_6a4om")
 [node name="Sprite2D" type="Sprite2D" parent="Rooms/Bedroom/ItemTestePInteracao" unique_id=249748297]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Bedroom/ItemTestePInteracao" unique_id=1040952070]
-position = Vector2(588, 631)
+position = Vector2(492, 555)
 shape = SubResource("RectangleShape2D_yij0u")
 
-[node name="CameraAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
+[node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
 
@@ -168,6 +265,15 @@ offset_right = 1005.0
 offset_bottom = 554.0
 color = Color(0, 0, 0, 1)
 
+[connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorWest" to="Rooms/ExteriorSouth" method="_on_exterior_west_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorEast/ExteriorNorth" to="Rooms/ExteriorEast" method="_on_exterior_north_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorEast/ExteriorSouth" to="Rooms/ExteriorEast" method="_on_exterior_south_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorWest/ExteriorNorth" to="Rooms/ExteriorWest" method="_on_exterior_north_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorWest/ExteriorSouth" to="Rooms/ExteriorSouth" method="_on_exterior_south_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/LanternRoom" to="Rooms/ExteriorNorth" method="_on_lantern_room_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/ExteriorWest" to="Rooms/ExteriorWest" method="_on_exterior_west_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/ExteriorEast" to="Rooms/ExteriorWest" method="_on_exterior_east_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/ExteriorN" to="Rooms/LanternRoom" method="_on_exterior_n_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/Bedroom" to="Rooms/LanternRoom" method="_on_bedroom_pressed"]
 [connection signal="pressed" from="Rooms/Bedroom/LanternRoom" to="Rooms/Bedroom" method="_on_button_pressed"]
