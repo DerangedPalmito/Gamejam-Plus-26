@@ -75,3 +75,7 @@ func change_room(new_room: String) -> void:
 
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	in_transaction = false
+
+
+func _on_texture_button_toggled(toggled_on: bool) -> void:
+	pass # Replace with function body.
