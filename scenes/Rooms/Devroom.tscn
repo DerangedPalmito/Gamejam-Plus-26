@@ -11,8 +11,11 @@
 [ext_resource type="Script" uid="uid://dklcalsk41kh5" path="res://scripts/Tasks/CleaningWindow/CleaningWindowTask.gd" id="8_myhuw"]
 [ext_resource type="Texture2D" uid="uid://co2qj3a0haj0e" path="res://icon.svg" id="9_xgmbl"]
 [ext_resource type="Texture2D" uid="uid://4aivai1bwkds" path="res://assets/Lantern GUI.png" id="11_dj1t2"]
+[ext_resource type="Script" uid="uid://ctwpffx3wt3vs" path="res://scripts/Tasks/CleaningGlassTask/CleaningGlassTask.gd" id="11_s74vj"]
 [ext_resource type="Texture2D" uid="uid://b77cnpk5uae4b" path="res://assets/LanternOn GUI.png" id="12_0ibmk"]
+[ext_resource type="Texture2D" uid="uid://xnjbveid27gu" path="res://assets/sprites/Rooms/Bedroom/Bedroom.png" id="12_k3oqt"]
 [ext_resource type="Script" uid="uid://ms6ua2drjd7f" path="res://scripts/lantern.gd" id="13_eb0sy"]
+[ext_resource type="Script" uid="uid://djyeh5ks8uyqn" path="res://scripts/Tasks/OpenValveTask/OpenValveTask.gd" id="13_ktxcu"]
 [ext_resource type="Script" uid="uid://bjcncmm7wk8iv" path="res://scripts/hallucination.gd" id="14_7q58c"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
@@ -236,7 +239,6 @@ offset_right = -163.0
 offset_bottom = -188.0
 
 [node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("8_myhuw")
@@ -281,28 +283,46 @@ show_percentage = false
 position = Vector2(0, -216)
 
 [node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("11_s74vj")
 
-[node name="Fundo" type="ColorRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=974194799]
+[node name="Fundo2" type="ColorRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=974194799]
 z_index = 1
 layout_mode = 0
 offset_left = -79.0
 offset_top = -312.0
 offset_right = 79.0
 offset_bottom = -122.0
-color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+color = Color(0.87345153, 0.0005072981, 0.853504, 1)
 
-[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo" unique_id=864776816]
+[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=864776816]
 z_index = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo/Area2D" unique_id=478835406]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2/Area2D" unique_id=478835406]
 z_index = 2
 position = Vector2(79.5, 83)
 shape = SubResource("RectangleShape2D_caeip")
+
+[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=2858987]
+z_index = 1
+layout_mode = 0
+offset_left = -65.0
+offset_top = -288.0
+offset_right = 63.0
+offset_bottom = -160.0
+texture = ExtResource("9_xgmbl")
+
+[node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=286171853]
+z_index = 1
+layout_mode = 0
+offset_left = -69.0
+offset_top = -152.0
+offset_right = 72.0
+offset_bottom = -125.0
+show_percentage = false
 
 [node name="CleaningGlassTask1" type="Button" parent="Rooms/LanternRoom" unique_id=1370081779]
 offset_left = -44.0
@@ -313,21 +333,38 @@ offset_bottom = -214.0
 [node name="Bedroom" type="Node2D" parent="Rooms" unique_id=1237759687]
 script = ExtResource("1_6a4om")
 
-[node name="Bedroom" type="ColorRect" parent="Rooms/Bedroom" unique_id=90638975]
-offset_left = -192.0
-offset_top = -108.0
-offset_right = 192.0
-offset_bottom = 108.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
+[node name="Background" type="Sprite2D" parent="Rooms/Bedroom" unique_id=1955479987]
+texture = ExtResource("12_k3oqt")
 
-[node name="Label" type="Label" parent="Rooms/Bedroom/Bedroom" unique_id=1814223750]
+[node name="OpenValveTask" type="Control" parent="Rooms/Bedroom" unique_id=1653108030]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_ktxcu")
+
+[node name="Fundo" type="ColorRect" parent="Rooms/Bedroom/OpenValveTask" unique_id=1014047659]
+z_index = 1
 layout_mode = 0
-offset_left = 161.0
-offset_top = 99.0
-offset_right = 267.0
-offset_bottom = 122.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Bedroom"
+offset_left = -79.0
+offset_top = -99.0
+offset_right = 79.0
+offset_bottom = 91.0
+color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+
+[node name="Area2D" type="Area2D" parent="Rooms/Bedroom/OpenValveTask/Fundo" unique_id=836691586]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Bedroom/OpenValveTask/Fundo/Area2D" unique_id=834612505]
+z_index = 2
+position = Vector2(79.5, 83)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Rooms/Bedroom/OpenValveTask" unique_id=178312567]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
 offset_left = -43.0
@@ -338,6 +375,12 @@ theme_override_font_sizes/font_size = 10
 text = "LANTERN ROOM"
 
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
+
+[node name="OpenValveTaskButton" type="Button" parent="Rooms/Bedroom" unique_id=2138966287]
+offset_left = -16.0
+offset_top = 1.0
+offset_right = 16.0
+offset_bottom = 42.0
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1358985023]
 
@@ -386,5 +429,7 @@ script = ExtResource("14_7q58c")
 [connection signal="pressed" from="Rooms/LanternRoom/ExteriorN" to="Rooms/LanternRoom" method="_on_exterior_n_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/Bedroom" to="Rooms/LanternRoom" method="_on_bedroom_pressed"]
 [connection signal="pressed" from="Rooms/LanternRoom/CleaningWindowTask1" to="Rooms/LanternRoom" method="_on_cleaning_window_task_1_pressed"]
-[connection signal="pressed" from="Rooms/Bedroom/LanternRoom" to="Rooms/Bedroom" method="_on_button_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/CleaningGlassTask1" to="Rooms/LanternRoom" method="_on_cleaning_glass_task_1_pressed"]
+[connection signal="pressed" from="Rooms/Bedroom/LanternRoom" to="Rooms/Bedroom" method="_on_lantern_room_pressed"]
+[connection signal="pressed" from="Rooms/Bedroom/OpenValveTaskButton" to="Rooms/Bedroom" method="_on_open_valve_task_button_pressed"]
 [connection signal="toggled" from="UI/CanvasLayer/TextureButton" to="Lantern" method="_on_texture_button_toggled"]
