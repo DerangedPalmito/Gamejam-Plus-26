@@ -35,6 +35,24 @@
 [ext_resource type="Texture2D" uid="uid://dwmag7pub6vy6" path="res://assets/sprites/Hallucinations/H_Bedtime_Tentacle.png" id="29_afos2"]
 [ext_resource type="Texture2D" uid="uid://dlitlf3ojmj22" path="res://assets/sprites/Hallucinations/H_Curious_Cloud.png" id="31_7vaoq"]
 [ext_resource type="Script" uid="uid://bb3nx5f3sa1x8" path="res://scripts/Hallucinations/HCuriousCloud.gd" id="31_876ev"]
+[ext_resource type="Script" uid="uid://bsi8op4n4ajl1" path="res://scripts/Hallucinations/HEvilStar.gd" id="33_q4xdx"]
+[ext_resource type="Texture2D" uid="uid://cbw0tpokv3335" path="res://assets/sprites/Hallucinations/H_Evil_Star.png" id="34_5b8q4"]
+[ext_resource type="Texture2D" uid="uid://x1rq1s7g23sy" path="res://assets/sprites/Hallucinations/H_Grabbers.png" id="35_5b8q4"]
+[ext_resource type="Script" uid="uid://cjsu4j71lwy3t" path="res://scripts/Hallucinations/HGrabbers.gd" id="35_bvj53"]
+[ext_resource type="Script" uid="uid://csaygdybb3j3w" path="res://scripts/Hallucinations/HGreenThing.gd" id="37_csgav"]
+[ext_resource type="Texture2D" uid="uid://1i4ros2ta5hr" path="res://assets/sprites/Hallucinations/H_Green_Thing.png" id="37_qmymu"]
+[ext_resource type="Script" uid="uid://wpp028spb2x0" path="res://scripts/Hallucinations/HInterdimensionalPeeker.gd" id="39_5swli"]
+[ext_resource type="Texture2D" uid="uid://bqfmk8bmvprwm" path="res://assets/sprites/Hallucinations/H_Interdimensional_Peeker.png" id="39_27etj"]
+[ext_resource type="Texture2D" uid="uid://dwqubsdqqcyey" path="res://assets/sprites/Hallucinations/H_Mermaid.png" id="41_2yc5u"]
+[ext_resource type="Script" uid="uid://dcsaib66rn4gj" path="res://scripts/Hallucinations/HMermaid.gd" id="41_8mkmi"]
+[ext_resource type="Script" uid="uid://l0ji787e4whi" path="res://scripts/Hallucinations/HMirror.gd" id="43_20ig3"]
+[ext_resource type="Texture2D" uid="uid://bdmoacow7dvk2" path="res://assets/sprites/Hallucinations/H_Mirror.png" id="43_aq7od"]
+[ext_resource type="Texture2D" uid="uid://bbsqmh0ftgkig" path="res://assets/sprites/Hallucinations/H_Rocky.png" id="45_ivc81"]
+[ext_resource type="Script" uid="uid://12f5ubytm1ea" path="res://scripts/Hallucinations/HRocky.gd" id="45_ul3je"]
+[ext_resource type="Script" uid="uid://nkym5pq2hpgn" path="res://scripts/Hallucinations/HSerpent.gd" id="47_f6kip"]
+[ext_resource type="Texture2D" uid="uid://s5daplvwgbaj" path="res://assets/sprites/Hallucinations/H_Serpent.png" id="47_thvq0"]
+[ext_resource type="Script" uid="uid://dl0e5aodm5v2j" path="res://scripts/Hallucinations/HSpirits.gd" id="49_flhlm"]
+[ext_resource type="Texture2D" uid="uid://h4n27jo4y5ll" path="res://assets/sprites/Hallucinations/H_Spirits.png" id="49_ish1h"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
 offsets = PackedFloat32Array(0, 0.6370192, 1)
@@ -74,6 +92,35 @@ height = 56.645905
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sg8nh"]
 radius = 39.473553
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsh0v"]
+radius = 17.117743
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qugj5"]
+radius = 18.380188
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caeip"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yij0u"]
+radius = 13.128707
+height = 70.89502
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfx2s"]
+radius = 6.564354
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7f2a0"]
+radius = 26.257416
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsh0v"]
+radius = 9.190095
+height = 50.72026
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6kip"]
+radius = 30.121384
+height = 92.83329
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flhlm"]
+radius = 26.257416
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 script = ExtResource("1_dyj72")
@@ -476,7 +523,137 @@ texture = ExtResource("31_7vaoq")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=605751372]
 
-[node name="H_Evil_Star" type="StaticBody2D" parent="Hallucinations" unique_id=2060439311]
+[node name="H_Evil_Star" type="StaticBody2D" parent="Hallucinations" unique_id=2060439311 groups=["hallucination"]]
+position = Vector2(132.59993, -23.631672)
+script = ExtResource("33_q4xdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Evil_Star" unique_id=1763962141]
+texture = ExtResource("34_5b8q4")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=764715374]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=690746497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Evil_Star" unique_id=1108363326]
+shape = SubResource("CircleShape2D_wsh0v")
+
+[node name="H_Grabbers" type="StaticBody2D" parent="Hallucinations" unique_id=418352623 groups=["hallucination"]]
+position = Vector2(-84.02372, 43.32473)
+script = ExtResource("35_bvj53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Grabbers" unique_id=1358237645]
+shape = SubResource("CircleShape2D_qugj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Grabbers" unique_id=1892328545]
+texture = ExtResource("35_5b8q4")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=893652273]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=558938122]
+
+[node name="H_Green_Thing" type="StaticBody2D" parent="Hallucinations" unique_id=335945883 groups=["hallucination"]]
+script = ExtResource("37_csgav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Green_Thing" unique_id=997206413]
+position = Vector2(-122.09696, -86.64946)
+rotation = 1.6539347
+shape = SubResource("CapsuleShape2D_caeip")
+
+[node name="HGreenThing" type="Sprite2D" parent="Hallucinations/H_Green_Thing" unique_id=1437264077]
+position = Vector2(-122.09697, -85.33659)
+texture = ExtResource("37_qmymu")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=2128232635]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=629372920]
+
+[node name="H_Interdimensional_Peeker" type="StaticBody2D" parent="Hallucinations" unique_id=124632328 groups=["hallucination"]]
+position = Vector2(-22.3188, -64.33066)
+script = ExtResource("39_5swli")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=818252008]
+texture = ExtResource("39_27etj")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=309858316]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=2097449894]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=7175503]
+position = Vector2(-1.3128706, -7.8772287)
+shape = SubResource("CapsuleShape2D_yij0u")
+
+[node name="H_Mermaid" type="StaticBody2D" parent="Hallucinations" unique_id=153364293 groups=["hallucination"]]
+position = Vector2(81.39798, 91.90094)
+script = ExtResource("41_8mkmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mermaid" unique_id=1723629417]
+texture = ExtResource("41_2yc5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mermaid" unique_id=792851379]
+shape = SubResource("CapsuleShape2D_dfx2s")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1230527554]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1300204683]
+
+[node name="H_Mirror" type="StaticBody2D" parent="Hallucinations" unique_id=305497041 groups=["hallucination"]]
+position = Vector2(152.293, 77.459366)
+script = ExtResource("43_20ig3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mirror" unique_id=1018930542]
+texture = ExtResource("43_aq7od")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mirror" unique_id=1402792341]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mirror" unique_id=2049825043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mirror" unique_id=518376976]
+shape = SubResource("CircleShape2D_7f2a0")
+
+[node name="H_Rocky" type="StaticBody2D" parent="Hallucinations" unique_id=144251353 groups=["hallucination"]]
+position = Vector2(73.52075, -11.815836)
+script = ExtResource("45_ul3je")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Rocky" unique_id=177889424]
+texture = ExtResource("45_ivc81")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1055074741]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1847272594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Rocky" unique_id=884261099]
+rotation = 1.3941653
+shape = SubResource("CapsuleShape2D_wsh0v")
+
+[node name="H_Serpent" type="StaticBody2D" parent="Hallucinations" unique_id=2084973562 groups=["hallucination"]]
+position = Vector2(-114.21974, 99.77817)
+script = ExtResource("47_f6kip")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Serpent" unique_id=180732994]
+texture = ExtResource("47_thvq0")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Serpent" unique_id=1274518045]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Serpent" unique_id=351125219]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Serpent" unique_id=966041884]
+position = Vector2(7.1525574e-07, 3.938613)
+rotation = -1.0730119
+shape = SubResource("CapsuleShape2D_f6kip")
+
+[node name="H_Spirits" type="StaticBody2D" parent="Hallucinations" unique_id=2080759109 groups=["hallucination"]]
+position = Vector2(-203.49495, 99.77817)
+script = ExtResource("49_flhlm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Spirits" unique_id=131591661]
+texture = ExtResource("49_ish1h")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Spirits" unique_id=1823471379]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Spirits" unique_id=686598092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Spirits" unique_id=1638744500]
+shape = SubResource("CircleShape2D_flhlm")
 
 [node name="Audios" type="Node2D" parent="." unique_id=1990645478]
 position = Vector2(0, -220)
