@@ -30,6 +30,7 @@
 [ext_resource type="Script" uid="uid://cqy2353rivvst" path="res://scripts/Hallucinations/HTentacle.gd" id="25_15smh"]
 [ext_resource type="Texture2D" uid="uid://cfsd8xjwi7pu" path="res://assets/sprites/Hallucinations/H_Tentacle_Valve.png" id="25_cb8w2"]
 [ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
+[ext_resource type="Script" uid="uid://cs8hmukptdeej" path="res://scripts/Hallucinations/hallucination_manager.gd" id="26_spp3d"]
 [ext_resource type="Script" uid="uid://btu386pd73x5r" path="res://scripts/Hallucinations/HApparition.gd" id="27_c5nik"]
 [ext_resource type="Texture2D" uid="uid://w7h5t7bgvpkm" path="res://assets/sprites/Hallucinations/H_Apparition.png" id="27_h2b7j"]
 [ext_resource type="Script" uid="uid://dl12vn6w12g0x" path="res://scripts/Hallucinations/HBedtime.gd" id="29_5rov7"]
@@ -692,9 +693,8 @@ offset_left = 355.0
 offset_top = 49.0
 offset_right = 378.0
 offset_bottom = 150.0
-max_value = 10000.0
 step = 1.0
-value = 10000.0
+value = 100.0
 fill_mode = 3
 show_percentage = false
 
@@ -717,6 +717,7 @@ texture_pressed = ExtResource("12_0ibmk")
 
 [node name="Hallucinations" type="Node2D" parent="." unique_id=333531320]
 scale = Vector2(0.76168966, 0.76168966)
+script = ExtResource("26_spp3d")
 
 [node name="H_Tentacle_Valve" type="StaticBody2D" parent="Hallucinations" unique_id=1084327159 groups=["hallucination"]]
 position = Vector2(-27.570284, 65.64353)
