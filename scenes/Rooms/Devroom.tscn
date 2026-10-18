@@ -461,6 +461,7 @@ texture_pressed = ExtResource("12_0ibmk")
 scale = Vector2(0.76168966, 0.76168966)
 
 [node name="H_Tentacle_Valve" type="StaticBody2D" parent="Hallucinations" unique_id=1084327159 groups=["hallucination"]]
+position = Vector2(9.190094, 61.704918)
 script = ExtResource("25_15smh")
 
 [node name="HallucinationsTentacle1" type="Sprite2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=873982082]

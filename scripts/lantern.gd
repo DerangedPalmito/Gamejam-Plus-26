@@ -9,6 +9,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	global_position = get_global_mouse_position()
+	if not lit:
+		return
+	var inside := area.get_overlapping_bodies()
+	for h in get_tree().get_nodes_in_group("hallucination"):
+		if h in inside:
+			h.lit()
+		else:
+			h.unlit()
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
 	print("botão clicado")
@@ -29,7 +37,6 @@ func _on_texture_button_toggled(toggled_on: bool) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("entrou: ", body.name)
 	if body.is_in_group("hallucination"):
-		print("entrou: ", body.name)
 		body.lit()
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
