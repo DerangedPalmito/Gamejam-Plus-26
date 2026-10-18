@@ -12,6 +12,10 @@ var is_cleaning: bool = false
 @onready var progress_bar: ProgressBar = $ProgressBar
 
 func _ready() -> void:
+	mouse_filter = Control.MOUSE_FILTER_IGNORE
+	dirty_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	if progress_bar:
+		progress_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	visible = false
 	dirty_overlay.modulate.a = 1.0
 	if progress_bar:

@@ -65,7 +65,7 @@ colors = PackedColorArray(0.91326916, 0.8214902, 0, 1, 0.5137255, 0.4745098, 0.1
 gradient = SubResource("Gradient_ktfow")
 fill = 1
 fill_from = Vector2(0.5052083, 0.4878472)
-fill_to = Vector2(0.9705882, 0.9588235)
+fill_to = Vector2(0.8882353, 0.81764704)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_caeip"]
 
@@ -163,7 +163,7 @@ texture_scale = 1.08
 
 [node name="Lantern3" type="PointLight2D" parent="." unique_id=479774620]
 position = Vector2(-6, -250)
-scale = Vector2(1.0486888, 1.0486888)
+scale = Vector2(1.9286875, 1.0486888)
 energy = 2.7
 texture = SubResource("GradientTexture2D_eb0sy")
 texture_scale = 2.6
@@ -178,25 +178,25 @@ position = Vector2(778, -440)
 texture = ExtResource("4_y28q2")
 
 [node name="ExteriorEast" type="Button" parent="Rooms/ExteriorSouth" unique_id=1474137575]
-visible = false
 offset_left = 594.0
 offset_top = -450.0
-offset_right = 669.0
-offset_bottom = -428.0
-theme_override_font_sizes/font_size = 10
-text = "ExteriorEast"
+offset_right = 616.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "A"
 
 [node name="ExteriorWest" type="Button" parent="Rooms/ExteriorSouth" unique_id=403502011]
-visible = false
-offset_left = 890.0
+offset_left = 940.0
 offset_top = -450.0
-offset_right = 965.0
-offset_bottom = -428.0
-theme_override_font_sizes/font_size = 10
-text = "ExteriorWest"
+offset_right = 962.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "D"
 
 [node name="ExteriorSouthAnchor" type="Marker2D" parent="Rooms/ExteriorSouth" unique_id=570855835]
-position = Vector2(780, -438)
+position = Vector2(778, -439)
 
 [node name="ExteriorEast" type="Node2D" parent="Rooms" unique_id=367207462]
 script = ExtResource("1_1d8qm")
@@ -206,25 +206,25 @@ position = Vector2(390, -440)
 texture = ExtResource("5_lqriq")
 
 [node name="ExteriorEastAnchor" type="Marker2D" parent="Rooms/ExteriorEast" unique_id=1944816457]
-position = Vector2(390, -438)
+position = Vector2(390, -439)
 
 [node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorEast" unique_id=135766936]
-visible = false
-offset_left = 205.0
+offset_left = 206.0
 offset_top = -450.0
-offset_right = 280.0
-offset_bottom = -428.0
-theme_override_font_sizes/font_size = 10
-text = "ExteriorNorth"
+offset_right = 228.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "A"
 
 [node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorEast" unique_id=2124744728]
-visible = false
-offset_left = 500.0
-offset_top = -451.0
-offset_right = 575.0
-offset_bottom = -429.0
-theme_override_font_sizes/font_size = 10
-text = "ExteriorSouth"
+offset_left = 552.0
+offset_top = -450.0
+offset_right = 574.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "D"
 
 [node name="ExteriorWest" type="Node2D" parent="Rooms" unique_id=1085817032]
 script = ExtResource("1_8yy2x")
@@ -234,25 +234,25 @@ position = Vector2(-389, -440)
 texture = ExtResource("6_txgth")
 
 [node name="ExteriorWestAnchor" type="Marker2D" parent="Rooms/ExteriorWest" unique_id=1193087812]
-position = Vector2(-388, -438)
+position = Vector2(-389, -439)
 
 [node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorWest" unique_id=1002195992]
-visible = false
-offset_left = -275.0
-offset_top = -449.0
-offset_right = -200.0
-offset_bottom = -427.0
-theme_override_font_sizes/font_size = 10
-text = "ExteriorNorth"
+offset_left = -227.0
+offset_top = -450.0
+offset_right = -205.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "D"
 
 [node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorWest" unique_id=1657131374]
-visible = false
-offset_left = -577.0
-offset_top = -451.0
-offset_right = -499.0
-offset_bottom = -429.0
-theme_override_font_sizes/font_size = 10
-text = "Exterior South"
+offset_left = -573.0
+offset_top = -450.0
+offset_right = -551.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "A"
 
 [node name="ExteriorNorth" type="Node2D" parent="Rooms" unique_id=703684846]
 script = ExtResource("1_bxvx3")
@@ -262,34 +262,34 @@ position = Vector2(0, -440)
 texture = ExtResource("7_acu75")
 
 [node name="LanternRoom" type="Button" parent="Rooms/ExteriorNorth" unique_id=14454335]
-visible = false
-offset_left = -37.0
-offset_top = -360.0
-offset_right = 40.0
-offset_bottom = -338.0
-theme_override_font_sizes/font_size = 10
-text = "Lantern Room"
+offset_left = -11.0
+offset_top = -366.0
+offset_right = 11.0
+offset_bottom = -340.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "S"
 
 [node name="ExteriorWest" type="Button" parent="Rooms/ExteriorNorth" unique_id=1111112957]
-visible = false
-offset_left = -161.0
-offset_top = -449.0
-offset_right = -88.0
-offset_bottom = -427.0
-theme_override_font_sizes/font_size = 10
-text = "Exterior West"
+offset_left = -184.0
+offset_top = -450.0
+offset_right = -162.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "A"
 
 [node name="ExteriorEast" type="Button" parent="Rooms/ExteriorNorth" unique_id=1713139337]
-visible = false
-offset_left = 119.0
+offset_left = 162.0
 offset_top = -450.0
-offset_right = 189.0
-offset_bottom = -428.0
-theme_override_font_sizes/font_size = 10
-text = "Exterior East"
+offset_right = 184.0
+offset_bottom = -424.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "D"
 
 [node name="ExteriorNorthAnchor" type="Marker2D" parent="Rooms/ExteriorNorth" unique_id=1570048440]
-position = Vector2(0, -438)
+position = Vector2(0, -439)
 
 [node name="LanternRoom" type="Node2D" parent="Rooms" unique_id=1498737095]
 position = Vector2(0, -3)
@@ -300,22 +300,22 @@ position = Vector2(0, -217)
 texture = ExtResource("7_dyj72")
 
 [node name="ExteriorN" type="Button" parent="Rooms/LanternRoom" unique_id=1866732864]
-visible = false
-offset_left = -44.0
-offset_top = -322.0
-offset_right = 49.0
-offset_bottom = -300.0
-theme_override_font_sizes/font_size = 10
-text = "EXTERIOR NORTH"
+offset_left = -11.0
+offset_top = -317.0
+offset_right = 11.0
+offset_bottom = -291.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "W"
 
 [node name="Bedroom" type="Button" parent="Rooms/LanternRoom" unique_id=1411027242]
-visible = false
-offset_left = -30.0
-offset_top = -134.0
-offset_right = 29.0
-offset_bottom = -112.0
-theme_override_font_sizes/font_size = 10
-text = "BEDROOM"
+offset_left = -11.0
+offset_top = -143.0
+offset_right = 11.0
+offset_bottom = -117.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "S"
 
 [node name="CleaningWindowTask1" type="Button" parent="Rooms/LanternRoom" unique_id=469844105]
 offset_left = -191.0
@@ -447,13 +447,13 @@ fill_mode = 4
 texture_progress = ExtResource("20_c7q2a")
 
 [node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
-visible = false
-offset_left = -43.0
-offset_top = -104.0
-offset_right = 45.0
-offset_bottom = -82.0
-theme_override_font_sizes/font_size = 10
-text = "LANTERN ROOM"
+offset_left = -11.0
+offset_top = -100.0
+offset_right = 11.0
+offset_bottom = -74.0
+theme_override_fonts/font = ExtResource("22_5vaka")
+theme_override_font_sizes/font_size = 20
+text = "A"
 
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
@@ -464,6 +464,7 @@ offset_right = 16.0
 offset_bottom = 42.0
 
 [node name="Indicators" type="Node2D" parent="." unique_id=1152431401]
+visible = false
 position = Vector2(-20, -105)
 
 [node name="W - Bedroom" type="Node2D" parent="Indicators" unique_id=1397172511]

@@ -19,7 +19,6 @@ func _process(_delta: float) -> void:
 			h.unlit()
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:
-	print("botão clicado")
 	if lit:
 		return
 	lit = true

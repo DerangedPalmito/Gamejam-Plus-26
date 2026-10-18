@@ -65,8 +65,7 @@ func game_over() -> void:
 		get_tree().change_scene_to_file("res://scenes/UI/DefeatScreen.tscn")
 
 func _process(delta: float) -> void:
-	print(light_house_life_bar.value)
-
+	pass
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W):
 		try_to_move("N")
