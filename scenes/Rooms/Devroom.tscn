@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://ms6ua2drjd7f" path="res://scripts/lantern.gd" id="13_eb0sy"]
 [ext_resource type="Script" uid="uid://djyeh5ks8uyqn" path="res://scripts/Tasks/OpenValveTask/OpenValveTask.gd" id="13_ktxcu"]
 [ext_resource type="Script" uid="uid://bjcncmm7wk8iv" path="res://scripts/hallucination.gd" id="14_7q58c"]
+[ext_resource type="PackedScene" uid="uid://cv8g38nq75anl" path="res://scenes/UI/clock.tscn" id="15_nves3"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
 offsets = PackedFloat32Array(0, 0.6370192, 1)
@@ -396,6 +397,9 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1842860626]
+
+[node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
+position = Vector2(355, 187)
 
 [node name="TextureButton" type="TextureButton" parent="UI/CanvasLayer" unique_id=2026000060]
 anchors_preset = -1
