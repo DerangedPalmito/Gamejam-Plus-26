@@ -8,6 +8,7 @@ signal damage_dealt(amount: float)
 
 @onready var collision: CollisionShape2D = $CollisionShape2D
 @onready var timer_till_death: Timer = $TimerTillDeath
+@onready var spawn_enemy: AudioStreamPlayer2D = $"../../SpawnEnemy"
 
 var is_active := false
 var damage_cooldown := 0.0
@@ -28,6 +29,7 @@ func _process(delta: float) -> void:
 		damage_dealt.emit(damage_amount)
 
 func spawn() -> void:
+	spawn_enemy.play()
 	is_active = true
 	damage_cooldown = 0.0
 	timer_till_death.stop()
