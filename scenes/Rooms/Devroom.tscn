@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
 [ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
 [ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="22_5vaka"]
 [ext_resource type="Script" uid="uid://cqy2353rivvst" path="res://scripts/Hallucinations/HTentacle.gd" id="25_15smh"]
 [ext_resource type="Texture2D" uid="uid://cfsd8xjwi7pu" path="res://assets/sprites/Hallucinations/H_Tentacle_Valve.png" id="25_cb8w2"]
 [ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
@@ -80,6 +81,13 @@ height = 100
 noise = SubResource("FastNoiseLite_s0huw")
 color_ramp = SubResource("Gradient_0rl78")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a16o"]
+bg_color = Color(0.04, 0.04, 0.04, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfx2s"]
 size = Vector2(17.052275, 46.073204)
 
@@ -112,8 +120,8 @@ radius = 6.564354
 radius = 26.257416
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsh0v"]
-radius = 9.190095
-height = 50.72026
+radius = 13.385803
+height = 70.43677
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6kip"]
 radius = 30.121384
@@ -154,6 +162,7 @@ position = Vector2(778, -440)
 texture = ExtResource("4_y28q2")
 
 [node name="ExteriorEast" type="Button" parent="Rooms/ExteriorSouth" unique_id=1474137575]
+visible = false
 offset_left = 594.0
 offset_top = -450.0
 offset_right = 669.0
@@ -162,6 +171,7 @@ theme_override_font_sizes/font_size = 10
 text = "ExteriorEast"
 
 [node name="ExteriorWest" type="Button" parent="Rooms/ExteriorSouth" unique_id=403502011]
+visible = false
 offset_left = 890.0
 offset_top = -450.0
 offset_right = 965.0
@@ -183,6 +193,7 @@ texture = ExtResource("5_lqriq")
 position = Vector2(390, -438)
 
 [node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorEast" unique_id=135766936]
+visible = false
 offset_left = 205.0
 offset_top = -450.0
 offset_right = 280.0
@@ -191,6 +202,7 @@ theme_override_font_sizes/font_size = 10
 text = "ExteriorNorth"
 
 [node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorEast" unique_id=2124744728]
+visible = false
 offset_left = 500.0
 offset_top = -451.0
 offset_right = 575.0
@@ -209,6 +221,7 @@ texture = ExtResource("6_txgth")
 position = Vector2(-388, -438)
 
 [node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorWest" unique_id=1002195992]
+visible = false
 offset_left = -275.0
 offset_top = -449.0
 offset_right = -200.0
@@ -217,6 +230,7 @@ theme_override_font_sizes/font_size = 10
 text = "ExteriorNorth"
 
 [node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorWest" unique_id=1657131374]
+visible = false
 offset_left = -577.0
 offset_top = -451.0
 offset_right = -499.0
@@ -232,6 +246,7 @@ position = Vector2(0, -440)
 texture = ExtResource("7_acu75")
 
 [node name="LanternRoom" type="Button" parent="Rooms/ExteriorNorth" unique_id=14454335]
+visible = false
 offset_left = -37.0
 offset_top = -360.0
 offset_right = 40.0
@@ -240,6 +255,7 @@ theme_override_font_sizes/font_size = 10
 text = "Lantern Room"
 
 [node name="ExteriorWest" type="Button" parent="Rooms/ExteriorNorth" unique_id=1111112957]
+visible = false
 offset_left = -161.0
 offset_top = -449.0
 offset_right = -88.0
@@ -248,6 +264,7 @@ theme_override_font_sizes/font_size = 10
 text = "Exterior West"
 
 [node name="ExteriorEast" type="Button" parent="Rooms/ExteriorNorth" unique_id=1713139337]
+visible = false
 offset_left = 119.0
 offset_top = -450.0
 offset_right = 189.0
@@ -267,6 +284,7 @@ position = Vector2(0, -217)
 texture = ExtResource("7_dyj72")
 
 [node name="ExteriorN" type="Button" parent="Rooms/LanternRoom" unique_id=1866732864]
+visible = false
 offset_left = -44.0
 offset_top = -322.0
 offset_right = 49.0
@@ -275,6 +293,7 @@ theme_override_font_sizes/font_size = 10
 text = "EXTERIOR NORTH"
 
 [node name="Bedroom" type="Button" parent="Rooms/LanternRoom" unique_id=1411027242]
+visible = false
 offset_left = -30.0
 offset_top = -134.0
 offset_right = 29.0
@@ -412,6 +431,7 @@ fill_mode = 4
 texture_progress = ExtResource("20_c7q2a")
 
 [node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
+visible = false
 offset_left = -43.0
 offset_top = -104.0
 offset_right = 45.0
@@ -422,10 +442,119 @@ text = "LANTERN ROOM"
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
 [node name="OpenValveTaskButton" type="Button" parent="Rooms/Bedroom" unique_id=2138966287]
+visible = false
 offset_left = -16.0
 offset_top = 1.0
 offset_right = 16.0
 offset_bottom = 42.0
+
+[node name="Indicators" type="Node2D" parent="." unique_id=1152431401]
+position = Vector2(-20, -105)
+
+[node name="W - Bedroom" type="Node2D" parent="Indicators" unique_id=1397172511]
+position = Vector2(19, 105)
+
+[node name="Panel" type="Panel" parent="Indicators/W - Bedroom" unique_id=1246297038]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/W - Bedroom" unique_id=1534517911]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="W - Lantern Room" type="Node2D" parent="Indicators" unique_id=833446229]
+position = Vector2(20, -115)
+
+[node name="Panel" type="Panel" parent="Indicators/W - Lantern Room" unique_id=1413266420]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/W - Lantern Room" unique_id=635468611]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S - Lantern Room" type="Node2D" parent="Indicators" unique_id=1778830986]
+position = Vector2(20, 71)
+
+[node name="Panel" type="Panel" parent="Indicators/S - Lantern Room" unique_id=2126526642]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/S - Lantern Room" unique_id=90058571]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S - Ocean" type="Node2D" parent="Indicators" unique_id=719358814]
+position = Vector2(20, -148)
+
+[node name="Panel" type="Panel" parent="Indicators/S - Ocean" unique_id=1740054654]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/S - Ocean" unique_id=1334371320]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S - Ocean2" type="Node2D" parent="Indicators" unique_id=240730135]
+position = Vector2(-366, -147)
+
+[node name="Panel" type="Panel" parent="Indicators/S - Ocean2" unique_id=1816443763]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/S - Ocean2" unique_id=102460393]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
 visible = false
@@ -461,7 +590,7 @@ texture_pressed = ExtResource("12_0ibmk")
 scale = Vector2(0.76168966, 0.76168966)
 
 [node name="H_Tentacle_Valve" type="StaticBody2D" parent="Hallucinations" unique_id=1084327159 groups=["hallucination"]]
-position = Vector2(9.190094, 61.704918)
+position = Vector2(-27.570284, 65.64353)
 script = ExtResource("25_15smh")
 
 [node name="HallucinationsTentacle1" type="Sprite2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=873982082]
@@ -498,7 +627,8 @@ shape = SubResource("RectangleShape2D_yij0u")
 script = ExtResource("29_5rov7")
 
 [node name="HBedtimeTentacle" type="Sprite2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1748636634]
-position = Vector2(-168.04749, 26.257408)
+position = Vector2(-162.80782, 27.267317)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("29_afos2")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1480143225]
@@ -506,18 +636,23 @@ texture = ExtResource("29_afos2")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=583602739]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=2118730249]
-position = Vector2(-175.92467, 24.94454)
+position = Vector2(-170.685, 25.954449)
 rotation = 1.3727069
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_sg8nh")
 
 [node name="H_Curious_Cloud" type="StaticBody2D" parent="Hallucinations" unique_id=1474093983 groups=["hallucination"]]
-position = Vector2(103.71678, -91.90094)
+position = Vector2(-174.6118, -651.18384)
 script = ExtResource("31_876ev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1755309141]
+position = Vector2(-12.39206, 0.14255354)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_sg8nh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1130537119]
+position = Vector2(-12.39206, 0.14255354)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("31_7vaoq")
 
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=2054423924]
@@ -525,10 +660,12 @@ texture = ExtResource("31_7vaoq")
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=605751372]
 
 [node name="H_Evil_Star" type="StaticBody2D" parent="Hallucinations" unique_id=2060439311 groups=["hallucination"]]
-position = Vector2(132.59993, -23.631672)
+position = Vector2(-550.0928, -628.86505)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("33_q4xdx")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Evil_Star" unique_id=1763962141]
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("34_5b8q4")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=764715374]
@@ -536,6 +673,7 @@ texture = ExtResource("34_5b8q4")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=690746497]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Evil_Star" unique_id=1108363326]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_wsh0v")
 
 [node name="H_Grabbers" type="StaticBody2D" parent="Hallucinations" unique_id=418352623 groups=["hallucination"]]
@@ -543,9 +681,13 @@ position = Vector2(-84.02372, 43.32473)
 script = ExtResource("35_bvj53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Grabbers" unique_id=1358237645]
+position = Vector2(264.59393, -325.74637)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_qugj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Grabbers" unique_id=1892328545]
+position = Vector2(264.59393, -325.74637)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("35_5b8q4")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=893652273]
@@ -553,15 +695,18 @@ texture = ExtResource("35_5b8q4")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=558938122]
 
 [node name="H_Green_Thing" type="StaticBody2D" parent="Hallucinations" unique_id=335945883 groups=["hallucination"]]
+position = Vector2(-492.32648, -2.625742)
 script = ExtResource("37_csgav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Green_Thing" unique_id=997206413]
-position = Vector2(-122.09696, -86.64946)
+position = Vector2(126.74254, -509.47104)
 rotation = 1.6539347
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_caeip")
 
 [node name="HGreenThing" type="Sprite2D" parent="Hallucinations/H_Green_Thing" unique_id=1437264077]
-position = Vector2(-122.09697, -85.33659)
+position = Vector2(126.74252, -508.15814)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("37_qmymu")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=2128232635]
@@ -569,10 +714,13 @@ texture = ExtResource("37_qmymu")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=629372920]
 
 [node name="H_Interdimensional_Peeker" type="StaticBody2D" parent="Hallucinations" unique_id=124632328 groups=["hallucination"]]
-position = Vector2(-22.3188, -64.33066)
+position = Vector2(-103.71678, -351.84933)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("39_5swli")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=818252008]
+position = Vector2(0.10694184, 8.401996)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("39_27etj")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=309858316]
@@ -580,11 +728,11 @@ texture = ExtResource("39_27etj")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=2097449894]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=7175503]
-position = Vector2(-1.3128706, -7.8772287)
+position = Vector2(-1.2059288, 0.5247679)
 shape = SubResource("CapsuleShape2D_yij0u")
 
 [node name="H_Mermaid" type="StaticBody2D" parent="Hallucinations" unique_id=153364293 groups=["hallucination"]]
-position = Vector2(81.39798, 91.90094)
+position = Vector2(855.99164, -539.58984)
 script = ExtResource("41_8mkmi")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mermaid" unique_id=1723629417]
@@ -598,10 +746,12 @@ shape = SubResource("CapsuleShape2D_dfx2s")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1300204683]
 
 [node name="H_Mirror" type="StaticBody2D" parent="Hallucinations" unique_id=305497041 groups=["hallucination"]]
-position = Vector2(152.293, 77.459366)
+position = Vector2(2.6257412, -557.97003)
+scale = Vector2(1.2, 1.2)
 script = ExtResource("43_20ig3")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mirror" unique_id=1018930542]
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("43_aq7od")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mirror" unique_id=1402792341]
@@ -609,13 +759,16 @@ texture = ExtResource("43_aq7od")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mirror" unique_id=2049825043]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mirror" unique_id=518376976]
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_7f2a0")
 
 [node name="H_Rocky" type="StaticBody2D" parent="Hallucinations" unique_id=144251353 groups=["hallucination"]]
-position = Vector2(73.52075, -11.815836)
+position = Vector2(409.61566, -480.51065)
 script = ExtResource("45_ul3je")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Rocky" unique_id=177889424]
+position = Vector2(-1.3128706, 0)
+scale = Vector2(1.505, 1.505)
 texture = ExtResource("45_ivc81")
 
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1055074741]
@@ -623,14 +776,17 @@ texture = ExtResource("45_ivc81")
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1847272594]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Rocky" unique_id=884261099]
+position = Vector2(1.3128707, 2.6257415)
 rotation = 1.3941653
 shape = SubResource("CapsuleShape2D_wsh0v")
 
 [node name="H_Serpent" type="StaticBody2D" parent="Hallucinations" unique_id=2084973562 groups=["hallucination"]]
-position = Vector2(-114.21974, 99.77817)
+position = Vector2(-114.21974, 101.09104)
 script = ExtResource("47_f6kip")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Serpent" unique_id=180732994]
+position = Vector2(1287.5787, -592.1115)
+scale = Vector2(1.355, 1.355)
 texture = ExtResource("47_thvq0")
 
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Serpent" unique_id=1274518045]
@@ -638,8 +794,9 @@ texture = ExtResource("47_thvq0")
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Serpent" unique_id=351125219]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Serpent" unique_id=966041884]
-position = Vector2(7.1525574e-07, 3.938613)
+position = Vector2(1287.5789, -588.1729)
 rotation = -1.0730119
+scale = Vector2(1.355, 1.355)
 shape = SubResource("CapsuleShape2D_f6kip")
 
 [node name="H_Spirits" type="StaticBody2D" parent="Hallucinations" unique_id=2080759109 groups=["hallucination"]]
@@ -647,6 +804,8 @@ position = Vector2(-203.49495, 99.77817)
 script = ExtResource("49_flhlm")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Spirits" unique_id=131591661]
+position = Vector2(837.2313, -653.8927)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("49_ish1h")
 
 [node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Spirits" unique_id=1823471379]
@@ -654,6 +813,8 @@ texture = ExtResource("49_ish1h")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Spirits" unique_id=686598092]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Spirits" unique_id=1638744500]
+position = Vector2(837.2313, -653.8927)
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_flhlm")
 
 [node name="Audios" type="Node2D" parent="." unique_id=1990645478]
