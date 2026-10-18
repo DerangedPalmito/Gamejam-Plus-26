@@ -3,6 +3,12 @@
 [ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="1_0i4v1"]
 [ext_resource type="Script" uid="uid://ddjapyt283t6s" path="res://scripts/UI/Tutorial.gd" id="1_kdxk5"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a16o"]
+bg_color = Color(0.42383888, 0.00085499464, 0.56713015, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdxk5"]
+bg_color = Color(0.6360155, 0.5583604, 0.15242258, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emcbx"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -18,25 +24,34 @@ offset_right = 194.0
 offset_bottom = 110.0
 color = Color(0, 0, 0, 1)
 
+[node name="Panel2" type="Panel" parent="." unique_id=1443324932]
+offset_left = -27.0
+offset_top = -16.0
+offset_right = 13.0
+offset_bottom = 24.0
+scale = Vector2(1.0400003, 0.43999755)
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Panel" type="Panel" parent="." unique_id=443834319]
+offset_left = -136.0
+offset_right = -96.0
+offset_bottom = 40.0
+scale = Vector2(1.48, 0.43999755)
+theme_override_styles/panel = SubResource("StyleBoxFlat_kdxk5")
+
 [node name="Label" type="Label" parent="." unique_id=1702631065]
 offset_left = -187.0
-offset_top = -104.0
-offset_right = 196.0
-offset_bottom = 85.0
+offset_top = -62.0
+offset_right = 189.0
+offset_bottom = 44.0
 theme_override_fonts/font = ExtResource("1_0i4v1")
 theme_override_font_sizes/font_size = 14
-text = "There are three tasks:
+text = "Now that you've arrived, a warning:
 
-First: You need to turn a valve to make the flame 
-burn brightly (click in valve and turn clockwise).
-
-Second: You need to clean the windows to get a 
-better view of the ocean (click in last left
-window and swipe)
-
-Third: You need to clean the glass that makes
-the lighthouse’s light appear hazy. (click in
-central glass and swipe)"
+Beware that the darkness may play tricks on you. 
+If you spot anything weird, just shine your 
+trusty lantern at it, before you find yourself 
+drowned in pitch blackness. Good luck!"
 
 [node name="Start" type="Button" parent="." unique_id=2132487660]
 offset_left = 97.0

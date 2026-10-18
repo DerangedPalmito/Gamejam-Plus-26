@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://dumued4h1l54c" path="res://scripts/UI/Lore.gd" id="1_p58dx"]
 [ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="2_5um6v"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5um6v"]
+bg_color = Color(0.6360155, 0.5583604, 0.15242258, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p58dx"]
 bg_color = Color(1, 1, 1, 1)
 
@@ -18,21 +21,26 @@ offset_right = 194.0
 offset_bottom = 110.0
 color = Color(0, 0, 0, 1)
 
+[node name="Panel" type="Panel" parent="." unique_id=1709115925]
+offset_left = -95.0
+offset_top = 14.0
+offset_right = -55.0
+offset_bottom = 54.0
+scale = Vector2(1.08, 0.43999755)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5um6v")
+
 [node name="Label" type="Label" parent="." unique_id=1838008250]
 offset_left = -185.0
-offset_top = -69.0
-offset_right = 186.0
-offset_bottom = 56.0
+offset_top = -48.0
+offset_right = 191.0
+offset_bottom = 47.0
 theme_override_fonts/font = ExtResource("2_5um6v")
 theme_override_font_sizes/font_size = 14
-text = "You've been hired to work a night shift at
-a lighthouse!
+text = "Welcome and congratulations! You've been hired 
+to work the night shift at a lighthouse!
 
-You must survive from 6:00 p.m. until 6:00 a.m.
-
-You need to complete tasks in order to keep
-the flame burning.
-"
+You must mantain the light's quality by doing 
+maintenance tasks, from 6:00 p.m. until 6:00 a.m."
 
 [node name="Start" type="Button" parent="." unique_id=1318727416]
 offset_left = 107.0
