@@ -48,8 +48,6 @@
 [ext_resource type="Texture2D" uid="uid://bqfmk8bmvprwm" path="res://assets/sprites/Hallucinations/H_Interdimensional_Peeker.png" id="39_27etj"]
 [ext_resource type="Texture2D" uid="uid://dwqubsdqqcyey" path="res://assets/sprites/Hallucinations/H_Mermaid.png" id="41_2yc5u"]
 [ext_resource type="Script" uid="uid://dcsaib66rn4gj" path="res://scripts/Hallucinations/HMermaid.gd" id="41_8mkmi"]
-[ext_resource type="Script" uid="uid://l0ji787e4whi" path="res://scripts/Hallucinations/HMirror.gd" id="43_20ig3"]
-[ext_resource type="Texture2D" uid="uid://bdmoacow7dvk2" path="res://assets/sprites/Hallucinations/H_Mirror.png" id="43_aq7od"]
 [ext_resource type="Texture2D" uid="uid://bbsqmh0ftgkig" path="res://assets/sprites/Hallucinations/H_Rocky.png" id="45_ivc81"]
 [ext_resource type="Script" uid="uid://12f5ubytm1ea" path="res://scripts/Hallucinations/HRocky.gd" id="45_ul3je"]
 [ext_resource type="Script" uid="uid://nkym5pq2hpgn" path="res://scripts/Hallucinations/HSerpent.gd" id="47_f6kip"]
@@ -72,6 +70,9 @@ fill_to = Vector2(0.8882353, 0.81764704)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4j1m"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s2xso"]
+bg_color = Color(0.14622876, 0.14622876, 0.1462287, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
 size = Vector2(287, 200)
@@ -124,9 +125,6 @@ radius = 18.380188
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yij0u"]
 radius = 13.128707
 height = 70.89502
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_7f2a0"]
-radius = 26.257416
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsh0v"]
 radius = 13.385803
@@ -348,6 +346,24 @@ z_index = 1
 position = Vector2(0, -208)
 texture = ExtResource("14_s0huw")
 
+[node name="Panel" type="Panel" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=285604473]
+offset_left = -128.0
+offset_top = -109.0
+offset_right = -88.0
+offset_bottom = -69.0
+scale = Vector2(6.330466, 0.42255744)
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2xso")
+
+[node name="Label" type="Label" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=2028385046]
+offset_left = -128.0
+offset_top = -112.0
+offset_right = 129.0
+offset_bottom = -89.0
+theme_override_font_sizes/font_size = 11
+text = "Hold and swipe to clean the brine and sand"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=1591093508]
 visible = false
 z_index = 1
@@ -391,6 +407,24 @@ script = ExtResource("11_s74vj")
 z_index = 1
 position = Vector2(0, -216)
 texture = ExtResource("16_b25mp")
+
+[node name="Panel" type="Panel" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=1757651675]
+offset_left = -128.0
+offset_top = -109.0
+offset_right = -88.0
+offset_bottom = -69.0
+scale = Vector2(6.330466, 0.42255744)
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2xso")
+
+[node name="Label" type="Label" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=569926603]
+offset_left = -128.0
+offset_top = -113.0
+offset_right = 129.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 12
+text = "Hold and swipe to wipe off the soot"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=864776816]
 z_index = 3
@@ -453,6 +487,24 @@ z_index = 1
 z_index = 2
 position = Vector2(79.5, 83)
 shape = SubResource("RectangleShape2D_caeip")
+
+[node name="Panel" type="Panel" parent="Rooms/Bedroom/OpenValveTask/Fundo" unique_id=1772148724]
+offset_left = -128.0
+offset_top = -107.0
+offset_right = -88.0
+offset_bottom = -67.0
+scale = Vector2(6.330466, 0.42255744)
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2xso")
+
+[node name="Label" type="Label" parent="Rooms/Bedroom/OpenValveTask/Fundo" unique_id=59908972]
+offset_left = -128.0
+offset_top = -110.0
+offset_right = 129.0
+offset_bottom = -87.0
+theme_override_font_sizes/font_size = 10
+text = "Turn the valve clockwise to wind the mechanism"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Rooms/Bedroom/OpenValveTask" unique_id=178312567]
 z_index = 3
@@ -724,7 +776,7 @@ show_percentage = false
 
 [node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
 position = Vector2(325, 188)
-time_scale = 2
+time_scale = 4
 
 [node name="TextureButton" type="TextureButton" parent="UI/CanvasLayer" unique_id=2026000060]
 anchors_preset = -1
@@ -885,23 +937,6 @@ texture = ExtResource("39_27etj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=7175503]
 position = Vector2(-1.2059288, 0.5247679)
 shape = SubResource("CapsuleShape2D_yij0u")
-
-[node name="H_Mirror" type="StaticBody2D" parent="Hallucinations" unique_id=305497041 groups=["hallucination"]]
-position = Vector2(2.6257412, -557.97003)
-scale = Vector2(1.2, 1.2)
-script = ExtResource("43_20ig3")
-
-[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mirror" unique_id=1018930542]
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("43_aq7od")
-
-[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mirror" unique_id=1402792341]
-
-[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mirror" unique_id=2049825043]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mirror" unique_id=518376976]
-scale = Vector2(1.2, 1.2)
-shape = SubResource("CircleShape2D_7f2a0")
 
 [node name="H_Rocky" type="StaticBody2D" parent="Hallucinations" unique_id=144251353 groups=["hallucination"]]
 position = Vector2(409.61566, -480.51065)

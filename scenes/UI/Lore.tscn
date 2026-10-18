@@ -13,9 +13,9 @@ script = ExtResource("1_p58dx")
 [node name="GameCamera" type="Camera2D" parent="." unique_id=418480820]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=147584984]
-offset_left = -203.0
+offset_left = -197.0
 offset_top = -109.0
-offset_right = 187.0
+offset_right = 193.0
 offset_bottom = 110.0
 color = Color(0, 0, 0, 1)
 

@@ -3,7 +3,7 @@ extends Node2D
 @export var max_active := 5
 @export var spawn_interval_min := 15.0
 @export var spawn_interval_max := 30.0
-@export var first_spawn_delay := 5.0
+@export var first_spawn_delay := 15.0
 
 var spawn_timer := Timer.new()
 
