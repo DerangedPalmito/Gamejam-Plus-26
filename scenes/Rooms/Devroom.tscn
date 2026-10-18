@@ -692,16 +692,17 @@ color = Color(0, 0, 0, 1)
 
 [node name="LightHouseLifeBar" type="ProgressBar" parent="UI/CanvasLayer" unique_id=1490004658]
 offset_left = 355.0
-offset_top = 49.0
+offset_top = 127.0
 offset_right = 378.0
-offset_bottom = 150.0
+offset_bottom = 212.0
 step = 1.0
 value = 100.0
 fill_mode = 3
 show_percentage = false
 
 [node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
-position = Vector2(355, 187)
+position = Vector2(325, 188)
+time_scale = 2
 
 [node name="TextureButton" type="TextureButton" parent="UI/CanvasLayer" unique_id=2026000060]
 anchors_preset = -1
@@ -709,10 +710,10 @@ anchor_left = 0.38000003
 anchor_top = 0.88000005
 anchor_right = 0.38000003
 anchor_bottom = 0.88000005
-offset_left = 152.07999
-offset_top = -16.080017
-offset_right = 184.07999
-offset_bottom = 15.919983
+offset_left = 127.07999
+offset_top = -8.080017
+offset_right = 159.07999
+offset_bottom = 23.919983
 toggle_mode = true
 texture_normal = ExtResource("11_dj1t2")
 texture_pressed = ExtResource("12_0ibmk")
