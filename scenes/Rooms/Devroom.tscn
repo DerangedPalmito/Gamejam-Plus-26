@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://x36ym02u2os3" path="res://assets/sprites/Rooms/LanternRoom/CleaningWindowZoom.png" id="14_s0huw"]
 [ext_resource type="PackedScene" uid="uid://cv8g38nq75anl" path="res://scenes/UI/clock.tscn" id="15_nves3"]
 [ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
+[ext_resource type="Texture2D" uid="uid://btefofgbla6l8" path="res://assets/glove.png" id="18_dyacj"]
 [ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
 [ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
 [ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="22_5vaka"]
@@ -69,6 +70,9 @@ fill_to = Vector2(0.8882353, 0.81764704)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_caeip"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4j1m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
 size = Vector2(287, 200)
 
@@ -82,6 +86,12 @@ width = 100
 height = 100
 noise = SubResource("FastNoiseLite_s0huw")
 color_ramp = SubResource("Gradient_0rl78")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyray"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyacj"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a16o"]
 bg_color = Color(0.04, 0.04, 0.04, 1)
@@ -318,10 +328,14 @@ theme_override_font_sizes/font_size = 20
 text = "S"
 
 [node name="CleaningWindowTask1" type="Button" parent="Rooms/LanternRoom" unique_id=469844105]
-offset_left = -191.0
-offset_top = -313.0
-offset_right = -163.0
-offset_bottom = -188.0
+offset_left = 113.0
+offset_top = -278.0
+offset_right = 155.0
+offset_bottom = -233.78947
+theme_override_styles/normal = SubResource("StyleBoxFlat_p4j1m")
+icon = ExtResource("18_dyacj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908 groups=["task"]]
 visible = false
@@ -405,10 +419,14 @@ offset_bottom = -125.0
 show_percentage = false
 
 [node name="CleaningGlassTask1" type="Button" parent="Rooms/LanternRoom" unique_id=1370081779]
-offset_left = -44.0
-offset_top = -282.0
-offset_right = 31.0
-offset_bottom = -214.0
+offset_left = -20.0
+offset_top = -211.0
+offset_right = 10.882347
+offset_bottom = -183.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyray")
+icon = ExtResource("18_dyacj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Bedroom" type="Node2D" parent="Rooms" unique_id=1237759687]
 script = ExtResource("1_6a4om")
@@ -453,15 +471,19 @@ offset_right = 11.0
 offset_bottom = -74.0
 theme_override_fonts/font = ExtResource("22_5vaka")
 theme_override_font_sizes/font_size = 20
-text = "A"
+text = "W"
 
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
 [node name="OpenValveTaskButton" type="Button" parent="Rooms/Bedroom" unique_id=2138966287]
-offset_left = -16.0
-offset_top = 1.0
+offset_left = -14.0
+offset_top = 28.125
 offset_right = 16.0
-offset_bottom = 42.0
+offset_bottom = 58.875
+theme_override_styles/normal = SubResource("StyleBoxFlat_dyacj")
+icon = ExtResource("18_dyacj")
+icon_alignment = 1
+expand_icon = true
 
 [node name="Indicators" type="Node2D" parent="." unique_id=1152431401]
 visible = false
