@@ -7,7 +7,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_exterior_east_pressed() -> void:
 	game_camera.global_position = $"../ExteriorEast/ExteriorEastAnchor".global_position
 

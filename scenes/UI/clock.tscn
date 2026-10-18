@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cv8g38nq75anl"]
+
+[ext_resource type="Script" uid="uid://btotfkrngjknk" path="res://scripts/UI/clock.gd" id="1_eqvxp"]
+[ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="2_2gten"]
+[ext_resource type="Texture2D" uid="uid://xgcjb51shq0a" path="res://assets/sprites/UI/Clock/nub.png" id="3_p4lr0"]
+[ext_resource type="Texture2D" uid="uid://drtxcr8jiyhmd" path="res://assets/sprites/UI/Clock/minute_hand.png" id="4_0hapa"]
+[ext_resource type="Texture2D" uid="uid://bg2v4qp7m0uq" path="res://assets/sprites/UI/Clock/hour_hand.png" id="5_2d3ab"]
+
+[node name="Clock" type="Node2D" unique_id=2024009353]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_eqvxp")
+
+[node name="frame" type="Sprite2D" parent="." unique_id=783009144]
+texture = ExtResource("2_2gten")
+
+[node name="nub" type="Sprite2D" parent="." unique_id=358029155]
+z_index = 4
+texture = ExtResource("3_p4lr0")
+
+[node name="Timer" type="Timer" parent="." unique_id=320467483]
+
+[node name="minute_hand" type="Sprite2D" parent="." unique_id=961520541]
+texture = ExtResource("4_0hapa")
+
+[node name="hour_hand" type="Sprite2D" parent="." unique_id=215927289]
+texture = ExtResource("5_2d3ab")
+flip_h = true

@@ -15,6 +15,13 @@ func _ready() -> void:
 	if progress_bar:
 		progress_bar.value = 0.0
 
+func reset_task() -> void:
+	current_progress = 0.0
+	is_cleaning = false
+	dirty_overlay.modulate.a = 1.0
+	if progress_bar:
+		progress_bar.value = 0.0
+
 func _unhandled_input(event: InputEvent) -> void:
 	if not visible or not is_task_active:
 		return
@@ -54,5 +61,6 @@ func finish_task() -> void:
 	is_task_active = false
 	current_progress = 0.0
 	visible = false
+	reset_task()
 	is_cleaning = false
 	task_finished.emit()

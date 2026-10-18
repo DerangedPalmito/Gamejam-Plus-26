@@ -7,16 +7,27 @@
 [ext_resource type="Script" uid="uid://c6sltjlyx4plr" path="res://scripts/Rooms/Devroom.gd" id="1_dyj72"]
 [ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
 [ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
-[ext_resource type="Texture2D" uid="uid://dryg6jesk2p8m" path="res://assets/sprites/Rooms/LanternRoom/LanternRoom.png" id="7_dyj72"]
+[ext_resource type="AudioStream" uid="uid://b1p6k8tvytpa2" path="res://assets/audio/sfx/OceanWavesMuffled.mp3" id="2_cb8w2"]
+[ext_resource type="AudioStream" uid="uid://bwuscj3sf1oyd" path="res://assets/audio/sfx/OceanWaves.mp3" id="3_15smh"]
+[ext_resource type="Texture2D" uid="uid://dios4e780dfj2" path="res://assets/sprites/Rooms/Exterior/South/ExteriorS.png" id="4_y28q2"]
+[ext_resource type="Texture2D" uid="uid://di5qlqf5rrjth" path="res://assets/sprites/Rooms/Exterior/East/ExteriorE.png" id="5_lqriq"]
+[ext_resource type="Texture2D" uid="uid://ddqltopmaogy6" path="res://assets/sprites/Rooms/Exterior/West/ExteriorW.png" id="6_txgth"]
+[ext_resource type="Texture2D" uid="uid://b5u76j3jua6ns" path="res://assets/sprites/Rooms/Exterior/North/ExteriorN.png" id="7_acu75"]
+[ext_resource type="Texture2D" uid="uid://kx4nnh08ovm1" path="res://assets/sprites/Rooms/LanternRoom/LanternRoom.png" id="7_dyj72"]
 [ext_resource type="Script" uid="uid://dklcalsk41kh5" path="res://scripts/Tasks/CleaningWindow/CleaningWindowTask.gd" id="8_myhuw"]
-[ext_resource type="Texture2D" uid="uid://co2qj3a0haj0e" path="res://icon.svg" id="9_xgmbl"]
 [ext_resource type="Texture2D" uid="uid://4aivai1bwkds" path="res://assets/Lantern GUI.png" id="11_dj1t2"]
 [ext_resource type="Script" uid="uid://ctwpffx3wt3vs" path="res://scripts/Tasks/CleaningGlassTask/CleaningGlassTask.gd" id="11_s74vj"]
 [ext_resource type="Texture2D" uid="uid://b77cnpk5uae4b" path="res://assets/LanternOn GUI.png" id="12_0ibmk"]
-[ext_resource type="Texture2D" uid="uid://xnjbveid27gu" path="res://assets/sprites/Rooms/Bedroom/Bedroom.png" id="12_k3oqt"]
+[ext_resource type="Texture2D" uid="uid://blb765tt45nx6" path="res://assets/sprites/Rooms/Bedroom/Bedroom.png" id="12_k3oqt"]
 [ext_resource type="Script" uid="uid://ms6ua2drjd7f" path="res://scripts/lantern.gd" id="13_eb0sy"]
 [ext_resource type="Script" uid="uid://djyeh5ks8uyqn" path="res://scripts/Tasks/OpenValveTask/OpenValveTask.gd" id="13_ktxcu"]
 [ext_resource type="Script" uid="uid://bjcncmm7wk8iv" path="res://scripts/hallucination.gd" id="14_7q58c"]
+[ext_resource type="Texture2D" uid="uid://x36ym02u2os3" path="res://assets/sprites/Rooms/LanternRoom/CleaningWindowZoom.png" id="14_s0huw"]
+[ext_resource type="PackedScene" uid="uid://cv8g38nq75anl" path="res://scenes/UI/clock.tscn" id="15_nves3"]
+[ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
+[ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
+[ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
+[ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
 offsets = PackedFloat32Array(0, 0.6370192, 1)
@@ -29,7 +40,18 @@ fill_from = Vector2(0.5052083, 0.4878472)
 fill_to = Vector2(0.890625, 0.8524306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
-size = Vector2(227, 170)
+size = Vector2(287, 200)
+
+[sub_resource type="Gradient" id="Gradient_0rl78"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s0huw"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b25mp"]
+width = 100
+height = 100
+noise = SubResource("FastNoiseLite_s0huw")
+color_ramp = SubResource("Gradient_0rl78")
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 script = ExtResource("1_dyj72")
@@ -51,21 +73,9 @@ script = ExtResource("13_eb0sy")
 [node name="ExteriorSouth" type="Node2D" parent="Rooms" unique_id=827130631]
 script = ExtResource("1_fwl31")
 
-[node name="ExteriorSouth" type="ColorRect" parent="Rooms/ExteriorSouth" unique_id=100018090]
-offset_left = 586.0
-offset_top = -548.0
-offset_right = 970.0
-offset_bottom = -332.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
-
-[node name="Label" type="Label" parent="Rooms/ExteriorSouth/ExteriorSouth" unique_id=1684670139]
-layout_mode = 0
-offset_left = 165.0
-offset_top = 96.0
-offset_right = 273.0
-offset_bottom = 119.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "ExteriorSouth"
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorSouth" unique_id=1107906636]
+position = Vector2(778, -440)
+texture = ExtResource("4_y28q2")
 
 [node name="ExteriorEast" type="Button" parent="Rooms/ExteriorSouth" unique_id=1474137575]
 offset_left = 594.0
@@ -89,21 +99,9 @@ position = Vector2(780, -438)
 [node name="ExteriorEast" type="Node2D" parent="Rooms" unique_id=367207462]
 script = ExtResource("1_1d8qm")
 
-[node name="ExteriorEast" type="ColorRect" parent="Rooms/ExteriorEast" unique_id=1539131259]
-offset_left = 198.0
-offset_top = -548.0
-offset_right = 582.0
-offset_bottom = -332.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
-
-[node name="Label" type="Label" parent="Rooms/ExteriorEast/ExteriorEast" unique_id=416583659]
-layout_mode = 0
-offset_left = 165.0
-offset_top = 96.0
-offset_right = 273.0
-offset_bottom = 119.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "ExteriorEast"
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorEast" unique_id=1568359043]
+position = Vector2(390, -440)
+texture = ExtResource("5_lqriq")
 
 [node name="ExteriorEastAnchor" type="Marker2D" parent="Rooms/ExteriorEast" unique_id=1944816457]
 position = Vector2(390, -438)
@@ -127,21 +125,9 @@ text = "ExteriorSouth"
 [node name="ExteriorWest" type="Node2D" parent="Rooms" unique_id=1085817032]
 script = ExtResource("1_8yy2x")
 
-[node name="ExteriorWest" type="ColorRect" parent="Rooms/ExteriorWest" unique_id=1715667841]
-offset_left = -581.0
-offset_top = -548.0
-offset_right = -197.0
-offset_bottom = -332.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
-
-[node name="Label" type="Label" parent="Rooms/ExteriorWest/ExteriorWest" unique_id=1061273643]
-layout_mode = 0
-offset_left = 165.0
-offset_top = 96.0
-offset_right = 273.0
-offset_bottom = 119.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "ExteriorWest"
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorWest" unique_id=1576898860]
+position = Vector2(-389, -440)
+texture = ExtResource("6_txgth")
 
 [node name="ExteriorWestAnchor" type="Marker2D" parent="Rooms/ExteriorWest" unique_id=1193087812]
 position = Vector2(-388, -438)
@@ -165,21 +151,9 @@ text = "Exterior South"
 [node name="ExteriorNorth" type="Node2D" parent="Rooms" unique_id=703684846]
 script = ExtResource("1_bxvx3")
 
-[node name="ExteriorNorth" type="ColorRect" parent="Rooms/ExteriorNorth" unique_id=1277196114]
-offset_left = -192.0
-offset_top = -548.0
-offset_right = 192.0
-offset_bottom = -332.0
-color = Color(0.49594545, 0.5590279, 0.4825552, 1)
-
-[node name="Label" type="Label" parent="Rooms/ExteriorNorth/ExteriorNorth" unique_id=1877119111]
-layout_mode = 0
-offset_left = 161.0
-offset_top = 98.0
-offset_right = 269.0
-offset_bottom = 121.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "ExteriorNorth"
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorNorth" unique_id=1320713252]
+position = Vector2(0, -440)
+texture = ExtResource("7_acu75")
 
 [node name="LanternRoom" type="Button" parent="Rooms/ExteriorNorth" unique_id=14454335]
 offset_left = -37.0
@@ -239,35 +213,33 @@ offset_right = -163.0
 offset_bottom = -188.0
 
 [node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("8_myhuw")
 
-[node name="Fundo" type="ColorRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=270126255]
+[node name="Fundo" type="Sprite2D" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=1638125514]
 z_index = 1
-layout_mode = 0
-offset_left = -79.0
-offset_top = -312.0
-offset_right = 79.0
-offset_bottom = -122.0
-color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+position = Vector2(0, -208)
+texture = ExtResource("14_s0huw")
 
 [node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=1591093508]
+visible = false
 z_index = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo/Area2D" unique_id=909738095]
 z_index = 2
-position = Vector2(79.5, 83)
+position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_caeip")
 
-[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=2126683004]
+[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=307224565]
 z_index = 1
 layout_mode = 0
-offset_left = -65.0
-offset_top = -292.0
-offset_right = 63.0
-offset_bottom = -164.0
-texture = ExtResource("9_xgmbl")
+offset_left = -130.0
+offset_top = -299.0
+offset_right = 129.0
+offset_bottom = -159.0
+texture = SubResource("NoiseTexture2D_b25mp")
 
 [node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=1316149943]
 z_index = 1
@@ -283,37 +255,34 @@ show_percentage = false
 position = Vector2(0, -216)
 
 [node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("11_s74vj")
 
-[node name="Fundo2" type="ColorRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=974194799]
+[node name="Fundo2" type="Sprite2D" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=984591635]
 z_index = 1
-layout_mode = 0
-offset_left = -79.0
-offset_top = -312.0
-offset_right = 79.0
-offset_bottom = -122.0
-color = Color(0.87345153, 0.0005072981, 0.853504, 1)
+position = Vector2(0, -216)
+texture = ExtResource("16_b25mp")
 
 [node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=864776816]
-z_index = 1
+z_index = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2/Area2D" unique_id=478835406]
-z_index = 2
-position = Vector2(79.5, 83)
+z_index = 3
+position = Vector2(7, -2)
 shape = SubResource("RectangleShape2D_caeip")
 
 [node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=2858987]
 z_index = 1
 layout_mode = 0
-offset_left = -65.0
-offset_top = -288.0
-offset_right = 63.0
-offset_bottom = -160.0
-texture = ExtResource("9_xgmbl")
+offset_left = -87.0
+offset_top = -299.0
+offset_right = 92.0
+offset_bottom = -135.0
+texture = SubResource("NoiseTexture2D_b25mp")
 
 [node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=286171853]
 z_index = 1
@@ -344,14 +313,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("13_ktxcu")
 
-[node name="Fundo" type="ColorRect" parent="Rooms/Bedroom/OpenValveTask" unique_id=1014047659]
+[node name="Fundo" type="Sprite2D" parent="Rooms/Bedroom/OpenValveTask" unique_id=1484664092]
 z_index = 1
-layout_mode = 0
-offset_left = -79.0
-offset_top = -99.0
-offset_right = 79.0
-offset_bottom = 91.0
-color = Color(0.63800716, 0.5222067, 0.24833402, 1)
+texture = ExtResource("19_crl1x")
 
 [node name="Area2D" type="Area2D" parent="Rooms/Bedroom/OpenValveTask/Fundo" unique_id=836691586]
 z_index = 1
@@ -362,9 +326,14 @@ position = Vector2(79.5, 83)
 shape = SubResource("RectangleShape2D_caeip")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Rooms/Bedroom/OpenValveTask" unique_id=178312567]
+z_index = 3
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -48.0
+offset_top = -46.0
+offset_right = 52.0
+offset_bottom = 54.0
+fill_mode = 4
+texture_progress = ExtResource("20_c7q2a")
 
 [node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
 offset_left = -43.0
@@ -382,8 +351,6 @@ offset_top = 1.0
 offset_right = 16.0
 offset_bottom = 42.0
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1358985023]
-
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
 visible = false
 
@@ -397,15 +364,18 @@ color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1842860626]
 
+[node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
+position = Vector2(355, 187)
+
 [node name="TextureButton" type="TextureButton" parent="UI/CanvasLayer" unique_id=2026000060]
 anchors_preset = -1
 anchor_left = 0.38000003
 anchor_top = 0.88000005
 anchor_right = 0.38000003
 anchor_bottom = 0.88000005
-offset_left = -15.920013
+offset_left = 152.07999
 offset_top = -16.080017
-offset_right = 16.079987
+offset_right = 184.07999
 offset_bottom = 15.919983
 toggle_mode = true
 texture_normal = ExtResource("11_dj1t2")
@@ -416,6 +386,21 @@ scale = Vector2(0.76168966, 0.76168966)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations" unique_id=873982082]
 script = ExtResource("14_7q58c")
+
+[node name="Audios" type="Node2D" parent="." unique_id=1990645478]
+position = Vector2(0, -220)
+
+[node name="SFX" type="Node2D" parent="Audios" unique_id=557156005]
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1325121193]
+stream = ExtResource("26_s0huw")
+bus = &"SFX"
+
+[node name="OutsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1629400413]
+stream = ExtResource("3_15smh")
+
+[node name="InsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1256222079]
+stream = ExtResource("2_cb8w2")
 
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorWest" to="Rooms/ExteriorSouth" method="_on_exterior_west_pressed"]

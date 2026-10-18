@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cuf2fa4iopxsx"
-path="res://.godot/imported/Farol sala.jpg.jpeg-a85ef3f7203a7e15c76c53bd3d9ec04a.ctex"
+uid="uid://xgcjb51shq0a"
+path="res://.godot/imported/nub.png-0c30dda1760209d517e7ced9e93b2f38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Farol sala.jpg.jpeg"
-dest_files=["res://.godot/imported/Farol sala.jpg.jpeg-a85ef3f7203a7e15c76c53bd3d9ec04a.ctex"]
+source_file="res://assets/sprites/UI/Clock/nub.png"
+dest_files=["res://.godot/imported/nub.png-0c30dda1760209d517e7ced9e93b2f38.ctex"]
 
 [params]
 
