@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cme8nympt1bwr" path="res://scripts/UI/MainMenu.gd" id="1_58fj5"]
 [ext_resource type="Texture2D" uid="uid://dios4e780dfj2" path="res://assets/sprites/Rooms/Exterior/South/ExteriorS.png" id="2_58fj5"]
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="3_3h7gc"]
 
 [node name="MainMenu" type="Node2D" unique_id=130539172]
 script = ExtResource("1_58fj5")
@@ -12,17 +13,34 @@ script = ExtResource("1_58fj5")
 texture = ExtResource("2_58fj5")
 
 [node name="Label" type="Label" parent="." unique_id=1754460255]
-offset_left = -76.0
-offset_top = -103.0
-offset_right = 80.0
-offset_bottom = -80.0
-text = "LightHouseAnomaly"
+offset_left = -124.0
+offset_top = -65.0
+offset_right = 130.0
+offset_bottom = -24.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_3h7gc")
+theme_override_font_sizes/font_size = 22
+text = "My Night as a
+Lighthouse Keeper"
+horizontal_alignment = 1
 
 [node name="Start" type="Button" parent="." unique_id=1552564114]
-offset_left = -120.0
-offset_top = 35.0
-offset_right = -64.0
-offset_bottom = 66.0
+offset_left = -28.0
+offset_top = 26.0
+offset_right = 28.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("3_3h7gc")
 text = "START"
 
+[node name="Quit" type="Button" parent="." unique_id=1752981272]
+offset_left = -27.0
+offset_top = 63.0
+offset_right = 28.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_3h7gc")
+theme_override_font_sizes/font_size = 16
+text = "QUIT"
+
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

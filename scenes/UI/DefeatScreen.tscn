@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://c50vx2n2ogd2n"]
+
+[ext_resource type="Script" uid="uid://11olgxwg4aso" path="res://scripts/UI/DefeatMenu.gd" id="1_fwhay"]
+[ext_resource type="Texture2D" uid="uid://dios4e780dfj2" path="res://assets/sprites/Rooms/Exterior/South/ExteriorS.png" id="2_lgkil"]
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="3_lgkil"]
+
+[node name="DefeatScreen" type="Node2D" unique_id=130539172]
+script = ExtResource("1_fwhay")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=2008995381]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1392769865]
+texture = ExtResource("2_lgkil")
+
+[node name="GameOver" type="Label" parent="." unique_id=1754460255]
+offset_left = -78.0
+offset_top = -79.0
+offset_right = 78.0
+offset_bottom = -56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_lgkil")
+theme_override_font_sizes/font_size = 26
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descrição" type="Label" parent="." unique_id=1649703873]
+visible = false
+offset_left = -78.0
+offset_top = -49.0
+offset_right = 78.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 10
+text = "lorem ipsum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="." unique_id=1552564114]
+offset_left = -37.0
+offset_top = 24.0
+offset_right = 38.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_lgkil")
+theme_override_font_sizes/font_size = 13
+text = "RESTART"
+
+[node name="Quit" type="Button" parent="." unique_id=1239622941]
+offset_left = -37.0
+offset_top = 55.0
+offset_right = 38.0
+offset_bottom = 81.0
+theme_override_fonts/font = ExtResource("3_lgkil")
+theme_override_font_sizes/font_size = 13
+text = "QUIT"
+
+[connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

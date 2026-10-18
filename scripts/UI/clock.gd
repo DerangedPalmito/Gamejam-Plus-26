@@ -19,7 +19,7 @@ func _on_timer_timeout() -> void:
 	if hour_rotation_degrees >= 2160:
 		hour_rotation_degrees = 2160
 		minute_clock.stop()
-		#mudar cena pra a derrota
+		get_tree().change_scene_to_file("res://scenes/UI/WinScreen.tscn")
 	
 	_update_clock_hands()
 
