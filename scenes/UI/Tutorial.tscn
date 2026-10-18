@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://buhtu60hxcmg8"]
+
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="1_0i4v1"]
+[ext_resource type="Script" uid="uid://ddjapyt283t6s" path="res://scripts/UI/Tutorial.gd" id="1_kdxk5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emcbx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="TUTORIAL" type="Node2D" unique_id=798016997]
+script = ExtResource("1_kdxk5")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=1600590125]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1298605708]
+offset_left = -196.0
+offset_top = -109.0
+offset_right = 194.0
+offset_bottom = 110.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1702631065]
+offset_left = -187.0
+offset_top = -104.0
+offset_right = 196.0
+offset_bottom = 85.0
+theme_override_fonts/font = ExtResource("1_0i4v1")
+theme_override_font_sizes/font_size = 14
+text = "There are three tasks:
+
+First: You need to turn a valve to make the flame 
+burn brightly (click in valve and turn clockwise).
+
+Second: You need to clean the windows to get a 
+better view of the ocean (click in last left
+window and swipe)
+
+Third: You need to clean the glass that makes
+the lighthouse’s light appear hazy. (click in
+central glass and swipe)"
+
+[node name="Start" type="Button" parent="." unique_id=2132487660]
+offset_left = 97.0
+offset_top = 72.0
+offset_right = 153.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0i4v1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_emcbx")
+text = "START"
+
+[node name="Start2" type="Button" parent="." unique_id=975964916]
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 88.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_0i4v1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_emcbx")
+text = "BACK"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Start2" to="." method="_on_start_2_pressed"]

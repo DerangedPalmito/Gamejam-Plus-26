@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cmuje4o7fy13i"]
+
+[ext_resource type="Script" uid="uid://dumued4h1l54c" path="res://scripts/UI/Lore.gd" id="1_p58dx"]
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="2_5um6v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p58dx"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="LORE" type="Node2D" unique_id=648098233]
+script = ExtResource("1_p58dx")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=418480820]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=147584984]
+offset_left = -196.0
+offset_top = -109.0
+offset_right = 194.0
+offset_bottom = 110.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1838008250]
+offset_left = -185.0
+offset_top = -69.0
+offset_right = 186.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("2_5um6v")
+theme_override_font_sizes/font_size = 14
+text = "You've been hired to work a night shift at
+a lighthouse!
+
+You must survive from 6:00 p.m. until 6:00 a.m.
+
+You need to complete tasks in order to keep
+the flame burning.
+"
+
+[node name="Start" type="Button" parent="." unique_id=1318727416]
+offset_left = 107.0
+offset_top = 68.0
+offset_right = 163.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5um6v")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p58dx")
+text = "NEXT"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
