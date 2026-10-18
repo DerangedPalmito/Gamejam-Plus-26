@@ -1,8 +1,8 @@
 class_name LanternRoom
 extends Node2D
 @onready var game_camera: Camera2D = $"../../GameCamera"
-@onready var fundo_2: ColorRect = $CleaningGlassTask/Fundo2
-@onready var fundo: ColorRect = $CleaningWindowTask/Fundo
+@onready var fundo_2: Sprite2D = $CleaningGlassTask/Fundo2
+@onready var fundo: Sprite2D = $CleaningWindowTask/Fundo
 @onready var cleaning_window_task: Control = $CleaningWindowTask
 @onready var cleaning_glass_task: Control = $CleaningGlassTask
 

@@ -1,7 +1,7 @@
 class_name Bedroom
 extends Node2D
 @onready var game_camera: Camera2D = $"../../GameCamera"
-@onready var fundo: ColorRect = $OpenValveTask/Fundo
+@onready var fundo: Sprite2D = $OpenValveTask/Fundo
 
 func _ready() -> void:
 	fundo.hide()
