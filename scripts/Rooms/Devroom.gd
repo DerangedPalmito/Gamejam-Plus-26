@@ -48,12 +48,18 @@ func _ready() -> void:
 	print("alucinações no grupo: ", list.size())
 	for h in list:
 		h.damage_dealt.connect(_on_hallucination_damage)
+	
+	for t in get_tree().get_nodes_in_group("task"):
+		t.task_finished.connect(_on_task_finished)
  
 func _on_hallucination_damage(amount: float) -> void:
 	print("recebi dano:", amount)
 	light_house_life_bar.value -= amount
 	if light_house_life_bar.value <= 0:
 		game_over()
+
+func _on_task_finished(heal_amount: float) -> void:
+	light_house_life_bar.value += heal_amount
 
 func game_over() -> void:
 		get_tree().change_scene_to_file("res://scenes/UI/DefeatScreen.tscn")

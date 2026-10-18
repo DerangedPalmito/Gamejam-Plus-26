@@ -1,11 +1,13 @@
 extends Control
 
-signal task_finished
+signal task_finished(heal_amount: float)
 
 var current_progress: float = 0.0
 var is_task_active: bool = false
 var is_cleaning: bool = false
 @export var cleaning_speed: float = 1.5
+@export var heal_amount := 10.0
+
 @onready var dirty_overlay: TextureRect = $DirtyOverlay
 @onready var progress_bar: ProgressBar = $ProgressBar
 
@@ -63,4 +65,4 @@ func finish_task() -> void:
 	visible = false
 	reset_task()
 	is_cleaning = false
-	task_finished.emit()
+	task_finished.emit(heal_amount)

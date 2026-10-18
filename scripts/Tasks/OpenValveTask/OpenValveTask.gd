@@ -1,9 +1,9 @@
 extends Control
 
-signal task_finished
-
+signal task_finished(heal_amount: float)
 @export var grab_radius: float = 120.0
 @export var turns_needed: float = 1.0  # quantas voltas completas para terminar
+@export var heal_amount := 10.0
 
 @onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
 
@@ -66,4 +66,4 @@ func finish_task() -> void:
 	is_task_active = false
 	visible = false
 	reset_task()
-	task_finished.emit()
+	task_finished.emit(heal_amount)

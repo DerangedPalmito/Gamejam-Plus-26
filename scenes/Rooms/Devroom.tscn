@@ -323,7 +323,7 @@ offset_top = -313.0
 offset_right = -163.0
 offset_bottom = -188.0
 
-[node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908]
+[node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908 groups=["task"]]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -365,7 +365,7 @@ show_percentage = false
 [node name="LanternRoomAnchor" type="Marker2D" parent="Rooms/LanternRoom" unique_id=326896093]
 position = Vector2(0, -216)
 
-[node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027]
+[node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027 groups=["task"]]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -416,7 +416,7 @@ script = ExtResource("1_6a4om")
 [node name="Background" type="Sprite2D" parent="Rooms/Bedroom" unique_id=1955479987]
 texture = ExtResource("12_k3oqt")
 
-[node name="OpenValveTask" type="Control" parent="Rooms/Bedroom" unique_id=1653108030]
+[node name="OpenValveTask" type="Control" parent="Rooms/Bedroom" unique_id=1653108030 groups=["task"]]
 visible = false
 layout_mode = 3
 anchors_preset = 0
