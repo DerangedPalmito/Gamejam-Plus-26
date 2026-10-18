@@ -4,6 +4,7 @@ extends Node2D
 @onready var foot_steps: AudioStreamPlayer2D = $Audios/SFX/FootSteps
 @onready var outside_sfx: AudioStreamPlayer2D = $Audios/SFX/OutsideSFX
 @onready var inside_sfx: AudioStreamPlayer2D = $Audios/SFX/InsideSFX
+@onready var light_house_life_bar: ProgressBar = $UI/CanvasLayer/LightHouseLifeBar
 
 @onready var rooms_map: Dictionary = {
 	"Bedroom": {
@@ -42,6 +43,23 @@ func _ready() -> void:
 	game_camera.global_position = rooms_map[current_room]["position"]
 	screen_fade.color.a = 0.0
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		
+	var list = get_tree().get_nodes_in_group("hallucination")
+	print("alucinações no grupo: ", list.size())
+	for h in list:
+		h.damage_dealt.connect(_on_hallucination_damage)
+ 
+func _on_hallucination_damage(amount: float) -> void:
+	print("recebi dano:", amount)
+	light_house_life_bar.value -= amount
+	if light_house_life_bar.value <= 0:
+		game_over()
+
+func game_over() -> void:
+		get_tree().change_scene_to_file("res://scenes/UI/DefeatScreen.tscn")
+
+func _process(delta: float) -> void:
+	print(light_house_life_bar.value)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W):
@@ -88,3 +106,6 @@ func change_room(new_room: String) -> void:
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	in_transaction = false
 	foot_steps.stop()
+
+func active_anomalies () -> void:
+	pass

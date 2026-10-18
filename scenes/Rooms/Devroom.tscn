@@ -56,14 +56,14 @@
 [ext_resource type="Texture2D" uid="uid://h4n27jo4y5ll" path="res://assets/sprites/Hallucinations/H_Spirits.png" id="49_ish1h"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
-offsets = PackedFloat32Array(0, 0.6370192, 1)
-colors = PackedColorArray(0.91326916, 0.8214902, 0, 1, 0.5119952, 0.47313702, 0.123413466, 0.6370192, 0.34, 0.34, 0.34, 0)
+offsets = PackedFloat32Array(0, 0.4245283, 1)
+colors = PackedColorArray(0.91326916, 0.8214902, 0, 1, 0.5137255, 0.4745098, 0.12156863, 0.81960785, 0.34, 0.34, 0.34, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_eb0sy"]
 gradient = SubResource("Gradient_ktfow")
 fill = 1
 fill_from = Vector2(0.5052083, 0.4878472)
-fill_to = Vector2(0.890625, 0.8524306)
+fill_to = Vector2(0.9705882, 0.9588235)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_caeip"]
 
@@ -113,9 +113,6 @@ radius = 18.380188
 radius = 13.128707
 height = 70.89502
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfx2s"]
-radius = 6.564354
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7f2a0"]
 radius = 26.257416
 
@@ -129,6 +126,9 @@ height = 92.83329
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flhlm"]
 radius = 26.257416
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfx2s"]
+radius = 6.564354
 
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 script = ExtResource("1_dyj72")
@@ -151,6 +151,20 @@ scale = Vector2(2, 2)
 z_index = 1
 position = Vector2(-139.82072, -23.631672)
 shape = SubResource("CircleShape2D_caeip")
+
+[node name="Lantern2" type="PointLight2D" parent="." unique_id=1244933846]
+position = Vector2(46, -34)
+scale = Vector2(0.76168966, 0.76168966)
+energy = 3.0
+texture = SubResource("GradientTexture2D_eb0sy")
+texture_scale = 1.08
+
+[node name="Lantern3" type="PointLight2D" parent="." unique_id=479774620]
+position = Vector2(-6, -250)
+scale = Vector2(1.0486888, 1.0486888)
+energy = 3.0
+texture = SubResource("GradientTexture2D_eb0sy")
+texture_scale = 3.0
 
 [node name="Rooms" type="Node2D" parent="." unique_id=902412338]
 
@@ -442,7 +456,6 @@ text = "LANTERN ROOM"
 [node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
 
 [node name="OpenValveTaskButton" type="Button" parent="Rooms/Bedroom" unique_id=2138966287]
-visible = false
 offset_left = -16.0
 offset_top = 1.0
 offset_right = 16.0
@@ -535,31 +548,136 @@ text = "S"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="S - Ocean2" type="Node2D" parent="Indicators" unique_id=240730135]
-position = Vector2(-366, -147)
+[node name="A" type="Node2D" parent="Indicators" unique_id=240730135]
+position = Vector2(-545, -246)
 
-[node name="Panel" type="Panel" parent="Indicators/S - Ocean2" unique_id=1816443763]
+[node name="Panel" type="Panel" parent="Indicators/A" unique_id=1816443763]
 offset_left = -14.0
 offset_top = -105.0
 offset_right = 14.0
 offset_bottom = -84.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
 
-[node name="Label" type="Label" parent="Indicators/S - Ocean2" unique_id=102460393]
+[node name="Label" type="Label" parent="Indicators/A" unique_id=102460393]
 offset_left = -11.0
 offset_top = -102.0
 offset_right = 11.0
 offset_bottom = -87.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("22_5vaka")
-text = "S"
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A2" type="Node2D" parent="Indicators" unique_id=2065761028]
+position = Vector2(-154, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A2" unique_id=1511356599]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A2" unique_id=442183740]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A3" type="Node2D" parent="Indicators" unique_id=867713475]
+position = Vector2(237, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A3" unique_id=561858121]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A3" unique_id=1696103212]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A4" type="Node2D" parent="Indicators" unique_id=377297584]
+position = Vector2(623, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A4" unique_id=1866413382]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A4" unique_id=1803900408]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="Node2D" parent="Indicators" unique_id=518267949]
+position = Vector2(972, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/D" unique_id=916736524]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/D" unique_id=413080146]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D2" type="Node2D" parent="Indicators" unique_id=1958461202]
+position = Vector2(585, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/D2" unique_id=294194675]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/D2" unique_id=386184552]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "D"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
-visible = false
 
 [node name="ScreenFade" type="ColorRect" parent="UI" unique_id=2107084289]
+visible = false
 offset_left = -995.0
 offset_top = -546.0
 offset_right = 1005.0
@@ -568,6 +686,17 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1842860626]
+
+[node name="LightHouseLifeBar" type="ProgressBar" parent="UI/CanvasLayer" unique_id=1490004658]
+offset_left = 355.0
+offset_top = 49.0
+offset_right = 378.0
+offset_bottom = 150.0
+max_value = 10000.0
+step = 1.0
+value = 10000.0
+fill_mode = 3
+show_percentage = false
 
 [node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
 position = Vector2(355, 187)
@@ -714,7 +843,7 @@ texture = ExtResource("37_qmymu")
 [node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=629372920]
 
 [node name="H_Interdimensional_Peeker" type="StaticBody2D" parent="Hallucinations" unique_id=124632328 groups=["hallucination"]]
-position = Vector2(-103.71678, -351.84933)
+position = Vector2(-162.79596, -353.1622)
 scale = Vector2(1.2, 1.2)
 script = ExtResource("39_5swli")
 
@@ -730,20 +859,6 @@ texture = ExtResource("39_27etj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=7175503]
 position = Vector2(-1.2059288, 0.5247679)
 shape = SubResource("CapsuleShape2D_yij0u")
-
-[node name="H_Mermaid" type="StaticBody2D" parent="Hallucinations" unique_id=153364293 groups=["hallucination"]]
-position = Vector2(855.99164, -539.58984)
-script = ExtResource("41_8mkmi")
-
-[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mermaid" unique_id=1723629417]
-texture = ExtResource("41_2yc5u")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mermaid" unique_id=792851379]
-shape = SubResource("CapsuleShape2D_dfx2s")
-
-[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1230527554]
-
-[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1300204683]
 
 [node name="H_Mirror" type="StaticBody2D" parent="Hallucinations" unique_id=305497041 groups=["hallucination"]]
 position = Vector2(2.6257412, -557.97003)
@@ -817,6 +932,20 @@ position = Vector2(837.2313, -653.8927)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CircleShape2D_flhlm")
 
+[node name="H_Mermaid" type="StaticBody2D" parent="Hallucinations" unique_id=153364293 groups=["hallucination"]]
+position = Vector2(855.99164, -539.58984)
+script = ExtResource("41_8mkmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mermaid" unique_id=1723629417]
+texture = ExtResource("41_2yc5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mermaid" unique_id=792851379]
+shape = SubResource("CapsuleShape2D_dfx2s")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1230527554]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1300204683]
+
 [node name="Audios" type="Node2D" parent="." unique_id=1990645478]
 position = Vector2(0, -220)
 
@@ -831,6 +960,9 @@ stream = ExtResource("3_15smh")
 
 [node name="InsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1256222079]
 stream = ExtResource("2_cb8w2")
+
+[node name="Dark" type="CanvasModulate" parent="." unique_id=66129]
+color = Color(0.8047426, 0.80474263, 0.8047426, 1)
 
 [connection signal="body_entered" from="Lantern/Area2D" to="Lantern" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]

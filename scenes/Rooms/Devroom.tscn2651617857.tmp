@@ -1,0 +1,967 @@
+[gd_scene format=3 uid="uid://cmk825dt2h4jx"]
+
+[ext_resource type="Script" uid="uid://dt1nv7w21ku5x" path="res://scripts/Rooms/ExteriorEast.gd" id="1_1d8qm"]
+[ext_resource type="Script" uid="uid://dalvswmuxbnf1" path="res://scripts/Rooms/Bedroom.gd" id="1_6a4om"]
+[ext_resource type="Script" uid="uid://brpm07hhawmrj" path="res://scripts/Rooms/ExteriorWest.gd" id="1_8yy2x"]
+[ext_resource type="Script" uid="uid://oshpex3ugxm4" path="res://scripts/Rooms/LightRoomNorth.gd" id="1_bxvx3"]
+[ext_resource type="Script" uid="uid://c6sltjlyx4plr" path="res://scripts/Rooms/Devroom.gd" id="1_dyj72"]
+[ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
+[ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
+[ext_resource type="AudioStream" uid="uid://b1p6k8tvytpa2" path="res://assets/audio/sfx/OceanWavesMuffled.mp3" id="2_cb8w2"]
+[ext_resource type="AudioStream" uid="uid://bwuscj3sf1oyd" path="res://assets/audio/sfx/OceanWaves.mp3" id="3_15smh"]
+[ext_resource type="Texture2D" uid="uid://dios4e780dfj2" path="res://assets/sprites/Rooms/Exterior/South/ExteriorS.png" id="4_y28q2"]
+[ext_resource type="Texture2D" uid="uid://di5qlqf5rrjth" path="res://assets/sprites/Rooms/Exterior/East/ExteriorE.png" id="5_lqriq"]
+[ext_resource type="Texture2D" uid="uid://ddqltopmaogy6" path="res://assets/sprites/Rooms/Exterior/West/ExteriorW.png" id="6_txgth"]
+[ext_resource type="Texture2D" uid="uid://b5u76j3jua6ns" path="res://assets/sprites/Rooms/Exterior/North/ExteriorN.png" id="7_acu75"]
+[ext_resource type="Texture2D" uid="uid://kx4nnh08ovm1" path="res://assets/sprites/Rooms/LanternRoom/LanternRoom.png" id="7_dyj72"]
+[ext_resource type="Script" uid="uid://dklcalsk41kh5" path="res://scripts/Tasks/CleaningWindow/CleaningWindowTask.gd" id="8_myhuw"]
+[ext_resource type="Texture2D" uid="uid://4aivai1bwkds" path="res://assets/Lantern GUI.png" id="11_dj1t2"]
+[ext_resource type="Script" uid="uid://ctwpffx3wt3vs" path="res://scripts/Tasks/CleaningGlassTask/CleaningGlassTask.gd" id="11_s74vj"]
+[ext_resource type="Texture2D" uid="uid://b77cnpk5uae4b" path="res://assets/LanternOn GUI.png" id="12_0ibmk"]
+[ext_resource type="Texture2D" uid="uid://blb765tt45nx6" path="res://assets/sprites/Rooms/Bedroom/Bedroom.png" id="12_k3oqt"]
+[ext_resource type="Script" uid="uid://ms6ua2drjd7f" path="res://scripts/lantern.gd" id="13_eb0sy"]
+[ext_resource type="Script" uid="uid://djyeh5ks8uyqn" path="res://scripts/Tasks/OpenValveTask/OpenValveTask.gd" id="13_ktxcu"]
+[ext_resource type="Texture2D" uid="uid://x36ym02u2os3" path="res://assets/sprites/Rooms/LanternRoom/CleaningWindowZoom.png" id="14_s0huw"]
+[ext_resource type="PackedScene" uid="uid://cv8g38nq75anl" path="res://scenes/UI/clock.tscn" id="15_nves3"]
+[ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
+[ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
+[ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
+[ext_resource type="FontFile" uid="uid://diddq7hktap3m" path="res://assets/TT_E.otf" id="22_5vaka"]
+[ext_resource type="Script" uid="uid://cqy2353rivvst" path="res://scripts/Hallucinations/HTentacle.gd" id="25_15smh"]
+[ext_resource type="Texture2D" uid="uid://cfsd8xjwi7pu" path="res://assets/sprites/Hallucinations/H_Tentacle_Valve.png" id="25_cb8w2"]
+[ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
+[ext_resource type="Script" uid="uid://btu386pd73x5r" path="res://scripts/Hallucinations/HApparition.gd" id="27_c5nik"]
+[ext_resource type="Texture2D" uid="uid://w7h5t7bgvpkm" path="res://assets/sprites/Hallucinations/H_Apparition.png" id="27_h2b7j"]
+[ext_resource type="Script" uid="uid://dl12vn6w12g0x" path="res://scripts/Hallucinations/HBedtime.gd" id="29_5rov7"]
+[ext_resource type="Texture2D" uid="uid://dwmag7pub6vy6" path="res://assets/sprites/Hallucinations/H_Bedtime_Tentacle.png" id="29_afos2"]
+[ext_resource type="Texture2D" uid="uid://dlitlf3ojmj22" path="res://assets/sprites/Hallucinations/H_Curious_Cloud.png" id="31_7vaoq"]
+[ext_resource type="Script" uid="uid://bb3nx5f3sa1x8" path="res://scripts/Hallucinations/HCuriousCloud.gd" id="31_876ev"]
+[ext_resource type="Script" uid="uid://bsi8op4n4ajl1" path="res://scripts/Hallucinations/HEvilStar.gd" id="33_q4xdx"]
+[ext_resource type="Texture2D" uid="uid://cbw0tpokv3335" path="res://assets/sprites/Hallucinations/H_Evil_Star.png" id="34_5b8q4"]
+[ext_resource type="Texture2D" uid="uid://x1rq1s7g23sy" path="res://assets/sprites/Hallucinations/H_Grabbers.png" id="35_5b8q4"]
+[ext_resource type="Script" uid="uid://cjsu4j71lwy3t" path="res://scripts/Hallucinations/HGrabbers.gd" id="35_bvj53"]
+[ext_resource type="Script" uid="uid://csaygdybb3j3w" path="res://scripts/Hallucinations/HGreenThing.gd" id="37_csgav"]
+[ext_resource type="Texture2D" uid="uid://1i4ros2ta5hr" path="res://assets/sprites/Hallucinations/H_Green_Thing.png" id="37_qmymu"]
+[ext_resource type="Script" uid="uid://wpp028spb2x0" path="res://scripts/Hallucinations/HInterdimensionalPeeker.gd" id="39_5swli"]
+[ext_resource type="Texture2D" uid="uid://bqfmk8bmvprwm" path="res://assets/sprites/Hallucinations/H_Interdimensional_Peeker.png" id="39_27etj"]
+[ext_resource type="Texture2D" uid="uid://dwqubsdqqcyey" path="res://assets/sprites/Hallucinations/H_Mermaid.png" id="41_2yc5u"]
+[ext_resource type="Script" uid="uid://dcsaib66rn4gj" path="res://scripts/Hallucinations/HMermaid.gd" id="41_8mkmi"]
+[ext_resource type="Script" uid="uid://l0ji787e4whi" path="res://scripts/Hallucinations/HMirror.gd" id="43_20ig3"]
+[ext_resource type="Texture2D" uid="uid://bdmoacow7dvk2" path="res://assets/sprites/Hallucinations/H_Mirror.png" id="43_aq7od"]
+[ext_resource type="Texture2D" uid="uid://bbsqmh0ftgkig" path="res://assets/sprites/Hallucinations/H_Rocky.png" id="45_ivc81"]
+[ext_resource type="Script" uid="uid://12f5ubytm1ea" path="res://scripts/Hallucinations/HRocky.gd" id="45_ul3je"]
+[ext_resource type="Script" uid="uid://nkym5pq2hpgn" path="res://scripts/Hallucinations/HSerpent.gd" id="47_f6kip"]
+[ext_resource type="Texture2D" uid="uid://s5daplvwgbaj" path="res://assets/sprites/Hallucinations/H_Serpent.png" id="47_thvq0"]
+[ext_resource type="Script" uid="uid://dl0e5aodm5v2j" path="res://scripts/Hallucinations/HSpirits.gd" id="49_flhlm"]
+[ext_resource type="Texture2D" uid="uid://h4n27jo4y5ll" path="res://assets/sprites/Hallucinations/H_Spirits.png" id="49_ish1h"]
+
+[sub_resource type="Gradient" id="Gradient_ktfow"]
+offsets = PackedFloat32Array(0, 0.6370192, 1)
+colors = PackedColorArray(0.91326916, 0.8214902, 0, 1, 0.5119952, 0.47313702, 0.123413466, 0.6370192, 0.34, 0.34, 0.34, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_eb0sy"]
+gradient = SubResource("Gradient_ktfow")
+fill = 1
+fill_from = Vector2(0.5052083, 0.4878472)
+fill_to = Vector2(0.890625, 0.8524306)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_caeip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
+size = Vector2(287, 200)
+
+[sub_resource type="Gradient" id="Gradient_0rl78"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s0huw"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b25mp"]
+width = 100
+height = 100
+noise = SubResource("FastNoiseLite_s0huw")
+color_ramp = SubResource("Gradient_0rl78")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a16o"]
+bg_color = Color(0.04, 0.04, 0.04, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfx2s"]
+size = Vector2(17.052275, 46.073204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yij0u"]
+size = Vector2(29.69306, 61.201954)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sg8nh"]
+radius = 6.6943474
+height = 56.645905
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sg8nh"]
+radius = 39.473553
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wsh0v"]
+radius = 17.117743
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qugj5"]
+radius = 18.380188
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caeip"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yij0u"]
+radius = 13.128707
+height = 70.89502
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dfx2s"]
+radius = 6.564354
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7f2a0"]
+radius = 26.257416
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wsh0v"]
+radius = 13.385803
+height = 70.43677
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f6kip"]
+radius = 30.121384
+height = 92.83329
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_flhlm"]
+radius = 26.257416
+
+[node name="Devroom" type="Node2D" unique_id=1740814942]
+script = ExtResource("1_dyj72")
+
+[node name="GameCamera" type="Camera2D" parent="." unique_id=1690645699]
+
+[node name="Lantern" type="PointLight2D" parent="." unique_id=2032118673]
+scale = Vector2(0.76168966, 0.76168966)
+enabled = false
+energy = 3.0
+texture = SubResource("GradientTexture2D_eb0sy")
+texture_scale = 1.08
+script = ExtResource("13_eb0sy")
+
+[node name="Area2D" type="Area2D" parent="Lantern" unique_id=2146847616]
+position = Vector2(279.64145, 45.950474)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lantern/Area2D" unique_id=452508597]
+z_index = 1
+position = Vector2(-139.82072, -23.631672)
+shape = SubResource("CircleShape2D_caeip")
+
+[node name="Rooms" type="Node2D" parent="." unique_id=902412338]
+
+[node name="ExteriorSouth" type="Node2D" parent="Rooms" unique_id=827130631]
+script = ExtResource("1_fwl31")
+
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorSouth" unique_id=1107906636]
+position = Vector2(778, -440)
+texture = ExtResource("4_y28q2")
+
+[node name="ExteriorEast" type="Button" parent="Rooms/ExteriorSouth" unique_id=1474137575]
+visible = false
+offset_left = 594.0
+offset_top = -450.0
+offset_right = 669.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorEast"
+
+[node name="ExteriorWest" type="Button" parent="Rooms/ExteriorSouth" unique_id=403502011]
+visible = false
+offset_left = 890.0
+offset_top = -450.0
+offset_right = 965.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorWest"
+
+[node name="ExteriorSouthAnchor" type="Marker2D" parent="Rooms/ExteriorSouth" unique_id=570855835]
+position = Vector2(780, -438)
+
+[node name="ExteriorEast" type="Node2D" parent="Rooms" unique_id=367207462]
+script = ExtResource("1_1d8qm")
+
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorEast" unique_id=1568359043]
+position = Vector2(390, -440)
+texture = ExtResource("5_lqriq")
+
+[node name="ExteriorEastAnchor" type="Marker2D" parent="Rooms/ExteriorEast" unique_id=1944816457]
+position = Vector2(390, -438)
+
+[node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorEast" unique_id=135766936]
+visible = false
+offset_left = 205.0
+offset_top = -450.0
+offset_right = 280.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorNorth"
+
+[node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorEast" unique_id=2124744728]
+visible = false
+offset_left = 500.0
+offset_top = -451.0
+offset_right = 575.0
+offset_bottom = -429.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorSouth"
+
+[node name="ExteriorWest" type="Node2D" parent="Rooms" unique_id=1085817032]
+script = ExtResource("1_8yy2x")
+
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorWest" unique_id=1576898860]
+position = Vector2(-389, -440)
+texture = ExtResource("6_txgth")
+
+[node name="ExteriorWestAnchor" type="Marker2D" parent="Rooms/ExteriorWest" unique_id=1193087812]
+position = Vector2(-388, -438)
+
+[node name="ExteriorNorth" type="Button" parent="Rooms/ExteriorWest" unique_id=1002195992]
+visible = false
+offset_left = -275.0
+offset_top = -449.0
+offset_right = -200.0
+offset_bottom = -427.0
+theme_override_font_sizes/font_size = 10
+text = "ExteriorNorth"
+
+[node name="ExteriorSouth" type="Button" parent="Rooms/ExteriorWest" unique_id=1657131374]
+visible = false
+offset_left = -577.0
+offset_top = -451.0
+offset_right = -499.0
+offset_bottom = -429.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior South"
+
+[node name="ExteriorNorth" type="Node2D" parent="Rooms" unique_id=703684846]
+script = ExtResource("1_bxvx3")
+
+[node name="Background" type="Sprite2D" parent="Rooms/ExteriorNorth" unique_id=1320713252]
+position = Vector2(0, -440)
+texture = ExtResource("7_acu75")
+
+[node name="LanternRoom" type="Button" parent="Rooms/ExteriorNorth" unique_id=14454335]
+visible = false
+offset_left = -37.0
+offset_top = -360.0
+offset_right = 40.0
+offset_bottom = -338.0
+theme_override_font_sizes/font_size = 10
+text = "Lantern Room"
+
+[node name="ExteriorWest" type="Button" parent="Rooms/ExteriorNorth" unique_id=1111112957]
+visible = false
+offset_left = -161.0
+offset_top = -449.0
+offset_right = -88.0
+offset_bottom = -427.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior West"
+
+[node name="ExteriorEast" type="Button" parent="Rooms/ExteriorNorth" unique_id=1713139337]
+visible = false
+offset_left = 119.0
+offset_top = -450.0
+offset_right = 189.0
+offset_bottom = -428.0
+theme_override_font_sizes/font_size = 10
+text = "Exterior East"
+
+[node name="ExteriorNorthAnchor" type="Marker2D" parent="Rooms/ExteriorNorth" unique_id=1570048440]
+position = Vector2(0, -438)
+
+[node name="LanternRoom" type="Node2D" parent="Rooms" unique_id=1498737095]
+position = Vector2(0, -3)
+script = ExtResource("1_h8onv")
+
+[node name="BackGround" type="Sprite2D" parent="Rooms/LanternRoom" unique_id=1048365011]
+position = Vector2(0, -217)
+texture = ExtResource("7_dyj72")
+
+[node name="ExteriorN" type="Button" parent="Rooms/LanternRoom" unique_id=1866732864]
+visible = false
+offset_left = -44.0
+offset_top = -322.0
+offset_right = 49.0
+offset_bottom = -300.0
+theme_override_font_sizes/font_size = 10
+text = "EXTERIOR NORTH"
+
+[node name="Bedroom" type="Button" parent="Rooms/LanternRoom" unique_id=1411027242]
+visible = false
+offset_left = -30.0
+offset_top = -134.0
+offset_right = 29.0
+offset_bottom = -112.0
+theme_override_font_sizes/font_size = 10
+text = "BEDROOM"
+
+[node name="CleaningWindowTask1" type="Button" parent="Rooms/LanternRoom" unique_id=469844105]
+offset_left = -191.0
+offset_top = -313.0
+offset_right = -163.0
+offset_bottom = -188.0
+
+[node name="CleaningWindowTask" type="Control" parent="Rooms/LanternRoom" unique_id=5248908]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("8_myhuw")
+
+[node name="Fundo" type="Sprite2D" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=1638125514]
+z_index = 1
+position = Vector2(0, -208)
+texture = ExtResource("14_s0huw")
+
+[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo" unique_id=1591093508]
+visible = false
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningWindowTask/Fundo/Area2D" unique_id=909738095]
+z_index = 2
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=307224565]
+z_index = 1
+layout_mode = 0
+offset_left = -130.0
+offset_top = -299.0
+offset_right = 129.0
+offset_bottom = -159.0
+texture = SubResource("NoiseTexture2D_b25mp")
+
+[node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningWindowTask" unique_id=1316149943]
+z_index = 1
+layout_mode = 0
+offset_left = -39.0
+offset_top = -161.0
+offset_right = 46.0
+offset_bottom = -134.0
+rounded = true
+show_percentage = false
+
+[node name="LanternRoomAnchor" type="Marker2D" parent="Rooms/LanternRoom" unique_id=326896093]
+position = Vector2(0, -216)
+
+[node name="CleaningGlassTask" type="Control" parent="Rooms/LanternRoom" unique_id=2048878027]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_s74vj")
+
+[node name="Fundo2" type="Sprite2D" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=984591635]
+z_index = 1
+position = Vector2(0, -216)
+texture = ExtResource("16_b25mp")
+
+[node name="Area2D" type="Area2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2" unique_id=864776816]
+z_index = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/LanternRoom/CleaningGlassTask/Fundo2/Area2D" unique_id=478835406]
+z_index = 3
+position = Vector2(7, -2)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="DirtyOverlay" type="TextureRect" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=2858987]
+z_index = 1
+layout_mode = 0
+offset_left = -87.0
+offset_top = -299.0
+offset_right = 92.0
+offset_bottom = -135.0
+texture = SubResource("NoiseTexture2D_b25mp")
+
+[node name="ProgressBar" type="ProgressBar" parent="Rooms/LanternRoom/CleaningGlassTask" unique_id=286171853]
+z_index = 1
+layout_mode = 0
+offset_left = -69.0
+offset_top = -152.0
+offset_right = 72.0
+offset_bottom = -125.0
+show_percentage = false
+
+[node name="CleaningGlassTask1" type="Button" parent="Rooms/LanternRoom" unique_id=1370081779]
+offset_left = -44.0
+offset_top = -282.0
+offset_right = 31.0
+offset_bottom = -214.0
+
+[node name="Bedroom" type="Node2D" parent="Rooms" unique_id=1237759687]
+script = ExtResource("1_6a4om")
+
+[node name="Background" type="Sprite2D" parent="Rooms/Bedroom" unique_id=1955479987]
+texture = ExtResource("12_k3oqt")
+
+[node name="OpenValveTask" type="Control" parent="Rooms/Bedroom" unique_id=1653108030]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("13_ktxcu")
+
+[node name="Fundo" type="Sprite2D" parent="Rooms/Bedroom/OpenValveTask" unique_id=1484664092]
+z_index = 1
+texture = ExtResource("19_crl1x")
+
+[node name="Area2D" type="Area2D" parent="Rooms/Bedroom/OpenValveTask/Fundo" unique_id=836691586]
+z_index = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Bedroom/OpenValveTask/Fundo/Area2D" unique_id=834612505]
+z_index = 2
+position = Vector2(79.5, 83)
+shape = SubResource("RectangleShape2D_caeip")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Rooms/Bedroom/OpenValveTask" unique_id=178312567]
+z_index = 3
+layout_mode = 0
+offset_left = -48.0
+offset_top = -46.0
+offset_right = 52.0
+offset_bottom = 54.0
+fill_mode = 4
+texture_progress = ExtResource("20_c7q2a")
+
+[node name="LanternRoom" type="Button" parent="Rooms/Bedroom" unique_id=446857915]
+visible = false
+offset_left = -43.0
+offset_top = -104.0
+offset_right = 45.0
+offset_bottom = -82.0
+theme_override_font_sizes/font_size = 10
+text = "LANTERN ROOM"
+
+[node name="BedroomAnchor" type="Marker2D" parent="Rooms/Bedroom" unique_id=1238267417]
+
+[node name="OpenValveTaskButton" type="Button" parent="Rooms/Bedroom" unique_id=2138966287]
+visible = false
+offset_left = -16.0
+offset_top = 1.0
+offset_right = 16.0
+offset_bottom = 42.0
+
+[node name="Indicators" type="Node2D" parent="." unique_id=1152431401]
+position = Vector2(-20, -105)
+
+[node name="W - Bedroom" type="Node2D" parent="Indicators" unique_id=1397172511]
+position = Vector2(19, 105)
+
+[node name="Panel" type="Panel" parent="Indicators/W - Bedroom" unique_id=1246297038]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/W - Bedroom" unique_id=1534517911]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="W - Lantern Room" type="Node2D" parent="Indicators" unique_id=833446229]
+position = Vector2(20, -115)
+
+[node name="Panel" type="Panel" parent="Indicators/W - Lantern Room" unique_id=1413266420]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/W - Lantern Room" unique_id=635468611]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "W"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S - Lantern Room" type="Node2D" parent="Indicators" unique_id=1778830986]
+position = Vector2(20, 71)
+
+[node name="Panel" type="Panel" parent="Indicators/S - Lantern Room" unique_id=2126526642]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/S - Lantern Room" unique_id=90058571]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="S - Ocean" type="Node2D" parent="Indicators" unique_id=719358814]
+position = Vector2(20, -148)
+
+[node name="Panel" type="Panel" parent="Indicators/S - Ocean" unique_id=1740054654]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/S - Ocean" unique_id=1334371320]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A" type="Node2D" parent="Indicators" unique_id=240730135]
+position = Vector2(-545, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A" unique_id=1816443763]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A" unique_id=102460393]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A2" type="Node2D" parent="Indicators" unique_id=2065761028]
+position = Vector2(-154, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A2" unique_id=1511356599]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A2" unique_id=442183740]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A3" type="Node2D" parent="Indicators" unique_id=867713475]
+position = Vector2(237, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A3" unique_id=561858121]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A3" unique_id=1696103212]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="A4" type="Node2D" parent="Indicators" unique_id=377297584]
+position = Vector2(623, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/A4" unique_id=1866413382]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/A4" unique_id=1803900408]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "A"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D" type="Node2D" parent="Indicators" unique_id=518267949]
+position = Vector2(972, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/D" unique_id=916736524]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/D" unique_id=413080146]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="D2" type="Node2D" parent="Indicators" unique_id=1958461202]
+position = Vector2(585, -246)
+
+[node name="Panel" type="Panel" parent="Indicators/D2" unique_id=294194675]
+offset_left = -14.0
+offset_top = -105.0
+offset_right = 14.0
+offset_bottom = -84.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2a16o")
+
+[node name="Label" type="Label" parent="Indicators/D2" unique_id=386184552]
+offset_left = -11.0
+offset_top = -102.0
+offset_right = 11.0
+offset_bottom = -87.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("22_5vaka")
+text = "D"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI" type="Node2D" parent="." unique_id=1852686082]
+
+[node name="ScreenFade" type="ColorRect" parent="UI" unique_id=2107084289]
+visible = false
+offset_left = -995.0
+offset_top = -546.0
+offset_right = 1005.0
+offset_bottom = 554.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI" unique_id=1842860626]
+
+[node name="LightHouseLifeBar" type="ProgressBar" parent="UI/CanvasLayer" unique_id=1490004658]
+offset_left = 355.0
+offset_top = 49.0
+offset_right = 378.0
+offset_bottom = 150.0
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Clock" parent="UI/CanvasLayer" unique_id=2024009353 instance=ExtResource("15_nves3")]
+position = Vector2(355, 187)
+
+[node name="TextureButton" type="TextureButton" parent="UI/CanvasLayer" unique_id=2026000060]
+anchors_preset = -1
+anchor_left = 0.38000003
+anchor_top = 0.88000005
+anchor_right = 0.38000003
+anchor_bottom = 0.88000005
+offset_left = 152.07999
+offset_top = -16.080017
+offset_right = 184.07999
+offset_bottom = 15.919983
+toggle_mode = true
+texture_normal = ExtResource("11_dj1t2")
+texture_pressed = ExtResource("12_0ibmk")
+
+[node name="Hallucinations" type="Node2D" parent="." unique_id=333531320]
+scale = Vector2(0.76168966, 0.76168966)
+
+[node name="H_Tentacle_Valve" type="StaticBody2D" parent="Hallucinations" unique_id=1084327159 groups=["hallucination"]]
+position = Vector2(-27.570284, 65.64353)
+script = ExtResource("25_15smh")
+
+[node name="HallucinationsTentacle1" type="Sprite2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=873982082]
+texture = ExtResource("25_cb8w2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=1621993982]
+position = Vector2(-2.1509087, -0.63316065)
+rotation = 0.35279778
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_dfx2s")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Tentacle_Valve" unique_id=1809986288]
+wait_time = 3.0
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Tentacle_Valve" unique_id=592188626]
+
+[node name="DamageTimer" type="Timer" parent="Hallucinations/H_Tentacle_Valve" unique_id=906936714]
+
+[node name="H_Apparition" type="StaticBody2D" parent="Hallucinations" unique_id=1282340150 groups=["hallucination"]]
+script = ExtResource("27_c5nik")
+
+[node name="HApparition" type="Sprite2D" parent="Hallucinations/H_Apparition" unique_id=1757631129]
+position = Vector2(-70.89501, -40.69899)
+scale = Vector2(1.3128706, 1.3128706)
+texture = ExtResource("27_h2b7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Apparition" unique_id=1119624121]
+position = Vector2(-76.551445, -40.698986)
+shape = SubResource("RectangleShape2D_yij0u")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Apparition" unique_id=1800301728]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Apparition" unique_id=2028808004]
+
+[node name="H_Bedtime_Tentacle" type="StaticBody2D" parent="Hallucinations" unique_id=1455902446 groups=["hallucination"]]
+script = ExtResource("29_5rov7")
+
+[node name="HBedtimeTentacle" type="Sprite2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1748636634]
+position = Vector2(-162.80782, 27.267317)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("29_afos2")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1480143225]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=583602739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=2118730249]
+position = Vector2(-170.685, 25.954449)
+rotation = 1.3727069
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_sg8nh")
+
+[node name="H_Curious_Cloud" type="StaticBody2D" parent="Hallucinations" unique_id=1474093983 groups=["hallucination"]]
+position = Vector2(-174.6118, -651.18384)
+script = ExtResource("31_876ev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1755309141]
+position = Vector2(-12.39206, 0.14255354)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_sg8nh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1130537119]
+position = Vector2(-12.39206, 0.14255354)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("31_7vaoq")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=2054423924]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=605751372]
+
+[node name="H_Evil_Star" type="StaticBody2D" parent="Hallucinations" unique_id=2060439311 groups=["hallucination"]]
+position = Vector2(-550.0928, -628.86505)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("33_q4xdx")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Evil_Star" unique_id=1763962141]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("34_5b8q4")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=764715374]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Evil_Star" unique_id=690746497]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Evil_Star" unique_id=1108363326]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_wsh0v")
+
+[node name="H_Grabbers" type="StaticBody2D" parent="Hallucinations" unique_id=418352623 groups=["hallucination"]]
+position = Vector2(-84.02372, 43.32473)
+script = ExtResource("35_bvj53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Grabbers" unique_id=1358237645]
+position = Vector2(264.59393, -325.74637)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_qugj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Grabbers" unique_id=1892328545]
+position = Vector2(264.59393, -325.74637)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("35_5b8q4")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=893652273]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Grabbers" unique_id=558938122]
+
+[node name="H_Green_Thing" type="StaticBody2D" parent="Hallucinations" unique_id=335945883 groups=["hallucination"]]
+position = Vector2(-492.32648, -2.625742)
+script = ExtResource("37_csgav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Green_Thing" unique_id=997206413]
+position = Vector2(126.74254, -509.47104)
+rotation = 1.6539347
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_caeip")
+
+[node name="HGreenThing" type="Sprite2D" parent="Hallucinations/H_Green_Thing" unique_id=1437264077]
+position = Vector2(126.74252, -508.15814)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("37_qmymu")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=2128232635]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Green_Thing" unique_id=629372920]
+
+[node name="H_Interdimensional_Peeker" type="StaticBody2D" parent="Hallucinations" unique_id=124632328 groups=["hallucination"]]
+position = Vector2(-103.71678, -351.84933)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("39_5swli")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=818252008]
+position = Vector2(0.10694184, 8.401996)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("39_27etj")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=309858316]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=2097449894]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Interdimensional_Peeker" unique_id=7175503]
+position = Vector2(-1.2059288, 0.5247679)
+shape = SubResource("CapsuleShape2D_yij0u")
+
+[node name="H_Mermaid" type="StaticBody2D" parent="Hallucinations" unique_id=153364293 groups=["hallucination"]]
+position = Vector2(855.99164, -539.58984)
+script = ExtResource("41_8mkmi")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mermaid" unique_id=1723629417]
+texture = ExtResource("41_2yc5u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mermaid" unique_id=792851379]
+shape = SubResource("CapsuleShape2D_dfx2s")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1230527554]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mermaid" unique_id=1300204683]
+
+[node name="H_Mirror" type="StaticBody2D" parent="Hallucinations" unique_id=305497041 groups=["hallucination"]]
+position = Vector2(2.6257412, -557.97003)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("43_20ig3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Mirror" unique_id=1018930542]
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("43_aq7od")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Mirror" unique_id=1402792341]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Mirror" unique_id=2049825043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Mirror" unique_id=518376976]
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_7f2a0")
+
+[node name="H_Rocky" type="StaticBody2D" parent="Hallucinations" unique_id=144251353 groups=["hallucination"]]
+position = Vector2(409.61566, -480.51065)
+script = ExtResource("45_ul3je")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Rocky" unique_id=177889424]
+position = Vector2(-1.3128706, 0)
+scale = Vector2(1.505, 1.505)
+texture = ExtResource("45_ivc81")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1055074741]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Rocky" unique_id=1847272594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Rocky" unique_id=884261099]
+position = Vector2(1.3128707, 2.6257415)
+rotation = 1.3941653
+shape = SubResource("CapsuleShape2D_wsh0v")
+
+[node name="H_Serpent" type="StaticBody2D" parent="Hallucinations" unique_id=2084973562 groups=["hallucination"]]
+position = Vector2(-114.21974, 101.09104)
+script = ExtResource("47_f6kip")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Serpent" unique_id=180732994]
+position = Vector2(1287.5787, -592.1115)
+scale = Vector2(1.355, 1.355)
+texture = ExtResource("47_thvq0")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Serpent" unique_id=1274518045]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Serpent" unique_id=351125219]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Serpent" unique_id=966041884]
+position = Vector2(1287.5789, -588.1729)
+rotation = -1.0730119
+scale = Vector2(1.355, 1.355)
+shape = SubResource("CapsuleShape2D_f6kip")
+
+[node name="H_Spirits" type="StaticBody2D" parent="Hallucinations" unique_id=2080759109 groups=["hallucination"]]
+position = Vector2(-203.49495, 99.77817)
+script = ExtResource("49_flhlm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Spirits" unique_id=131591661]
+position = Vector2(837.2313, -653.8927)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("49_ish1h")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Spirits" unique_id=1823471379]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Spirits" unique_id=686598092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Spirits" unique_id=1638744500]
+position = Vector2(837.2313, -653.8927)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_flhlm")
+
+[node name="Audios" type="Node2D" parent="." unique_id=1990645478]
+position = Vector2(0, -220)
+
+[node name="SFX" type="Node2D" parent="Audios" unique_id=557156005]
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1325121193]
+stream = ExtResource("26_s0huw")
+bus = &"SFX"
+
+[node name="OutsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1629400413]
+stream = ExtResource("3_15smh")
+
+[node name="InsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1256222079]
+stream = ExtResource("2_cb8w2")
+
+[connection signal="body_entered" from="Lantern/Area2D" to="Lantern" method="_on_area_2d_body_entered"]
+[connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorWest" to="Rooms/ExteriorSouth" method="_on_exterior_west_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorEast/ExteriorNorth" to="Rooms/ExteriorEast" method="_on_exterior_north_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorEast/ExteriorSouth" to="Rooms/ExteriorEast" method="_on_exterior_south_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorWest/ExteriorNorth" to="Rooms/ExteriorWest" method="_on_exterior_north_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorWest/ExteriorSouth" to="Rooms/ExteriorSouth" method="_on_exterior_south_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/LanternRoom" to="Rooms/ExteriorNorth" method="_on_lantern_room_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/ExteriorWest" to="Rooms/ExteriorWest" method="_on_exterior_west_pressed"]
+[connection signal="pressed" from="Rooms/ExteriorNorth/ExteriorEast" to="Rooms/ExteriorWest" method="_on_exterior_east_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/ExteriorN" to="Rooms/LanternRoom" method="_on_exterior_n_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/Bedroom" to="Rooms/LanternRoom" method="_on_bedroom_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/CleaningWindowTask1" to="Rooms/LanternRoom" method="_on_cleaning_window_task_1_pressed"]
+[connection signal="pressed" from="Rooms/LanternRoom/CleaningGlassTask1" to="Rooms/LanternRoom" method="_on_cleaning_glass_task_1_pressed"]
+[connection signal="pressed" from="Rooms/Bedroom/LanternRoom" to="Rooms/Bedroom" method="_on_lantern_room_pressed"]
+[connection signal="pressed" from="Rooms/Bedroom/OpenValveTaskButton" to="Rooms/Bedroom" method="_on_open_valve_task_button_pressed"]
+[connection signal="toggled" from="UI/CanvasLayer/TextureButton" to="Lantern" method="_on_texture_button_toggled"]
