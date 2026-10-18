@@ -1,6 +1,9 @@
 extends Node2D
 @onready var game_camera: Camera2D = $GameCamera
 @onready var screen_fade: ColorRect = $UI/ScreenFade
+@onready var foot_steps: AudioStreamPlayer2D = $Audios/SFX/FootSteps
+@onready var outside_sfx: AudioStreamPlayer2D = $Audios/SFX/OutsideSFX
+@onready var inside_sfx: AudioStreamPlayer2D = $Audios/SFX/InsideSFX
 
 @onready var rooms_map: Dictionary = {
 	"Bedroom": {
@@ -32,6 +35,10 @@ var current_room: String = "Bedroom"
 var in_transaction: bool = false
 
 func _ready() -> void:
+	if(current_room.begins_with("Exterior")):
+		outside_sfx.play()
+	else:
+		inside_sfx.play()
 	game_camera.global_position = rooms_map[current_room]["position"]
 	screen_fade.color.a = 0.0
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -59,6 +66,13 @@ func try_to_move(direction: String) -> void:
 		print("Caminho bloqueado nesta direção!")
 
 func change_room(new_room: String) -> void:
+	if new_room.begins_with("Exterior"):
+		outside_sfx.play()
+		inside_sfx.stop()
+	else:
+		inside_sfx.play()
+		outside_sfx.stop()		
+	foot_steps.play()
 	in_transaction = true
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_STOP
 
@@ -75,6 +89,7 @@ func change_room(new_room: String) -> void:
 
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	in_transaction = false
+	foot_steps.stop()
 
 
 func _on_texture_button_toggled(toggled_on: bool) -> void:

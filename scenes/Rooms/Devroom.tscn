@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://c6sltjlyx4plr" path="res://scripts/Rooms/Devroom.gd" id="1_dyj72"]
 [ext_resource type="Script" uid="uid://bc1w6dswq10be" path="res://scripts/Rooms/ExteriorSouth.gd" id="1_fwl31"]
 [ext_resource type="Script" uid="uid://be3xdh1ctgdt3" path="res://scripts/Rooms/LanternRoom.gd" id="1_h8onv"]
+[ext_resource type="AudioStream" uid="uid://b1p6k8tvytpa2" path="res://assets/audio/sfx/OceanWavesMuffled.mp3" id="2_cb8w2"]
+[ext_resource type="AudioStream" uid="uid://bwuscj3sf1oyd" path="res://assets/audio/sfx/OceanWaves.mp3" id="3_15smh"]
 [ext_resource type="Texture2D" uid="uid://dios4e780dfj2" path="res://assets/sprites/Rooms/Exterior/South/ExteriorS.png" id="4_y28q2"]
 [ext_resource type="Texture2D" uid="uid://di5qlqf5rrjth" path="res://assets/sprites/Rooms/Exterior/East/ExteriorE.png" id="5_lqriq"]
 [ext_resource type="Texture2D" uid="uid://ddqltopmaogy6" path="res://assets/sprites/Rooms/Exterior/West/ExteriorW.png" id="6_txgth"]
@@ -25,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
 [ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
 [ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
+[ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
 offsets = PackedFloat32Array(0, 0.6370192, 1)
@@ -348,8 +351,6 @@ offset_top = 1.0
 offset_right = 16.0
 offset_bottom = 42.0
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1358985023]
-
 [node name="UI" type="Node2D" parent="." unique_id=1852686082]
 visible = false
 
@@ -385,6 +386,21 @@ scale = Vector2(0.76168966, 0.76168966)
 
 [node name="Sprite2D" type="Sprite2D" parent="Hallucinations" unique_id=873982082]
 script = ExtResource("14_7q58c")
+
+[node name="Audios" type="Node2D" parent="." unique_id=1990645478]
+position = Vector2(0, -220)
+
+[node name="SFX" type="Node2D" parent="Audios" unique_id=557156005]
+
+[node name="FootSteps" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1325121193]
+stream = ExtResource("26_s0huw")
+bus = &"SFX"
+
+[node name="OutsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1629400413]
+stream = ExtResource("3_15smh")
+
+[node name="InsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1256222079]
+stream = ExtResource("2_cb8w2")
 
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorWest" to="Rooms/ExteriorSouth" method="_on_exterior_west_pressed"]
