@@ -62,8 +62,6 @@ func try_to_move(direction: String) -> void:
 	if current_connections.has(direction):
 		var next_room = current_connections[direction]
 		change_room(next_room)
-	else:
-		print("Caminho bloqueado nesta direção!")
 
 func change_room(new_room: String) -> void:
 	if new_room.begins_with("Exterior"):
@@ -71,7 +69,7 @@ func change_room(new_room: String) -> void:
 		inside_sfx.stop()
 	else:
 		inside_sfx.play()
-		outside_sfx.stop()		
+		outside_sfx.stop()
 	foot_steps.play()
 	in_transaction = true
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -90,7 +88,3 @@ func change_room(new_room: String) -> void:
 	screen_fade.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	in_transaction = false
 	foot_steps.stop()
-
-
-func _on_texture_button_toggled(toggled_on: bool) -> void:
-	pass # Replace with function body.

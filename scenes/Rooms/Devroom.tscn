@@ -21,13 +21,20 @@
 [ext_resource type="Texture2D" uid="uid://blb765tt45nx6" path="res://assets/sprites/Rooms/Bedroom/Bedroom.png" id="12_k3oqt"]
 [ext_resource type="Script" uid="uid://ms6ua2drjd7f" path="res://scripts/lantern.gd" id="13_eb0sy"]
 [ext_resource type="Script" uid="uid://djyeh5ks8uyqn" path="res://scripts/Tasks/OpenValveTask/OpenValveTask.gd" id="13_ktxcu"]
-[ext_resource type="Script" uid="uid://bjcncmm7wk8iv" path="res://scripts/hallucination.gd" id="14_7q58c"]
 [ext_resource type="Texture2D" uid="uid://x36ym02u2os3" path="res://assets/sprites/Rooms/LanternRoom/CleaningWindowZoom.png" id="14_s0huw"]
 [ext_resource type="PackedScene" uid="uid://cv8g38nq75anl" path="res://scenes/UI/clock.tscn" id="15_nves3"]
 [ext_resource type="Texture2D" uid="uid://bai0gtisak7gp" path="res://assets/sprites/Rooms/LanternRoom/LanternZoomTask.png" id="16_b25mp"]
 [ext_resource type="Texture2D" uid="uid://bbw5mhl2tara" path="res://assets/sprites/UI/Valve/ValveZoom.png" id="19_crl1x"]
 [ext_resource type="Texture2D" uid="uid://htdrpf5bdqhp" path="res://assets/sprites/UI/Clock/clock_frame.png" id="20_c7q2a"]
+[ext_resource type="Script" uid="uid://cqy2353rivvst" path="res://scripts/Hallucinations/HTentacle.gd" id="25_15smh"]
+[ext_resource type="Texture2D" uid="uid://cfsd8xjwi7pu" path="res://assets/sprites/Hallucinations/H_Tentacle_Valve.png" id="25_cb8w2"]
 [ext_resource type="AudioStream" uid="uid://bqfnxhp2yxfav" path="res://assets/audio/sfx/FootSteps.mp3" id="26_s0huw"]
+[ext_resource type="Script" uid="uid://btu386pd73x5r" path="res://scripts/Hallucinations/HApparition.gd" id="27_c5nik"]
+[ext_resource type="Texture2D" uid="uid://w7h5t7bgvpkm" path="res://assets/sprites/Hallucinations/H_Apparition.png" id="27_h2b7j"]
+[ext_resource type="Script" uid="uid://dl12vn6w12g0x" path="res://scripts/Hallucinations/HBedtime.gd" id="29_5rov7"]
+[ext_resource type="Texture2D" uid="uid://dwmag7pub6vy6" path="res://assets/sprites/Hallucinations/H_Bedtime_Tentacle.png" id="29_afos2"]
+[ext_resource type="Texture2D" uid="uid://dlitlf3ojmj22" path="res://assets/sprites/Hallucinations/H_Curious_Cloud.png" id="31_7vaoq"]
+[ext_resource type="Script" uid="uid://bb3nx5f3sa1x8" path="res://scripts/Hallucinations/HCuriousCloud.gd" id="31_876ev"]
 
 [sub_resource type="Gradient" id="Gradient_ktfow"]
 offsets = PackedFloat32Array(0, 0.6370192, 1)
@@ -38,6 +45,8 @@ gradient = SubResource("Gradient_ktfow")
 fill = 1
 fill_from = Vector2(0.5052083, 0.4878472)
 fill_to = Vector2(0.890625, 0.8524306)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_caeip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caeip"]
 size = Vector2(287, 200)
@@ -53,6 +62,19 @@ height = 100
 noise = SubResource("FastNoiseLite_s0huw")
 color_ramp = SubResource("Gradient_0rl78")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfx2s"]
+size = Vector2(17.052275, 46.073204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yij0u"]
+size = Vector2(29.69306, 61.201954)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sg8nh"]
+radius = 6.6943474
+height = 56.645905
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sg8nh"]
+radius = 39.473553
+
 [node name="Devroom" type="Node2D" unique_id=1740814942]
 script = ExtResource("1_dyj72")
 
@@ -67,6 +89,13 @@ texture_scale = 1.08
 script = ExtResource("13_eb0sy")
 
 [node name="Area2D" type="Area2D" parent="Lantern" unique_id=2146847616]
+position = Vector2(279.64145, 45.950474)
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lantern/Area2D" unique_id=452508597]
+z_index = 1
+position = Vector2(-139.82072, -23.631672)
+shape = SubResource("CircleShape2D_caeip")
 
 [node name="Rooms" type="Node2D" parent="." unique_id=902412338]
 
@@ -384,8 +413,70 @@ texture_pressed = ExtResource("12_0ibmk")
 [node name="Hallucinations" type="Node2D" parent="." unique_id=333531320]
 scale = Vector2(0.76168966, 0.76168966)
 
-[node name="Sprite2D" type="Sprite2D" parent="Hallucinations" unique_id=873982082]
-script = ExtResource("14_7q58c")
+[node name="H_Tentacle_Valve" type="StaticBody2D" parent="Hallucinations" unique_id=1084327159 groups=["hallucination"]]
+script = ExtResource("25_15smh")
+
+[node name="HallucinationsTentacle1" type="Sprite2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=873982082]
+texture = ExtResource("25_cb8w2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Tentacle_Valve" unique_id=1621993982]
+position = Vector2(-2.1509087, -0.63316065)
+rotation = 0.35279778
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_dfx2s")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Tentacle_Valve" unique_id=1809986288]
+wait_time = 3.0
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Tentacle_Valve" unique_id=592188626]
+
+[node name="H_Apparition" type="StaticBody2D" parent="Hallucinations" unique_id=1282340150 groups=["hallucination"]]
+script = ExtResource("27_c5nik")
+
+[node name="HApparition" type="Sprite2D" parent="Hallucinations/H_Apparition" unique_id=1757631129]
+position = Vector2(-70.89501, -40.69899)
+scale = Vector2(1.3128706, 1.3128706)
+texture = ExtResource("27_h2b7j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Apparition" unique_id=1119624121]
+position = Vector2(-76.551445, -40.698986)
+shape = SubResource("RectangleShape2D_yij0u")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Apparition" unique_id=1800301728]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Apparition" unique_id=2028808004]
+
+[node name="H_Bedtime_Tentacle" type="StaticBody2D" parent="Hallucinations" unique_id=1455902446 groups=["hallucination"]]
+script = ExtResource("29_5rov7")
+
+[node name="HBedtimeTentacle" type="Sprite2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1748636634]
+position = Vector2(-168.04749, 26.257408)
+texture = ExtResource("29_afos2")
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=1480143225]
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=583602739]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Bedtime_Tentacle" unique_id=2118730249]
+position = Vector2(-175.92467, 24.94454)
+rotation = 1.3727069
+shape = SubResource("CapsuleShape2D_sg8nh")
+
+[node name="H_Curious_Cloud" type="StaticBody2D" parent="Hallucinations" unique_id=1474093983 groups=["hallucination"]]
+position = Vector2(103.71678, -91.90094)
+script = ExtResource("31_876ev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1755309141]
+shape = SubResource("CircleShape2D_sg8nh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Hallucinations/H_Curious_Cloud" unique_id=1130537119]
+texture = ExtResource("31_7vaoq")
+
+[node name="RespawnTimer" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=2054423924]
+
+[node name="TimerTillDeath" type="Timer" parent="Hallucinations/H_Curious_Cloud" unique_id=605751372]
+
+[node name="H_Evil_Star" type="StaticBody2D" parent="Hallucinations" unique_id=2060439311]
 
 [node name="Audios" type="Node2D" parent="." unique_id=1990645478]
 position = Vector2(0, -220)
@@ -402,6 +493,7 @@ stream = ExtResource("3_15smh")
 [node name="InsideSFX" type="AudioStreamPlayer2D" parent="Audios/SFX" unique_id=1256222079]
 stream = ExtResource("2_cb8w2")
 
+[connection signal="body_entered" from="Lantern/Area2D" to="Lantern" method="_on_area_2d_body_entered"]
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorEast" to="Rooms/ExteriorSouth" method="_on_exterior_east_pressed"]
 [connection signal="pressed" from="Rooms/ExteriorSouth/ExteriorWest" to="Rooms/ExteriorSouth" method="_on_exterior_west_pressed"]
 [connection signal="pressed" from="Rooms/ExteriorEast/ExteriorNorth" to="Rooms/ExteriorEast" method="_on_exterior_north_pressed"]
